@@ -12,7 +12,7 @@
 						<div class="row">
 							<div class="col-lg-7">
 								<div class="text">
-									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+									<h1>We Provide <span>Body Building</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
 										<a href="#" class="btn">Get Appointment</a>
@@ -30,7 +30,7 @@
 						<div class="row">
 							<div class="col-lg-7">
 								<div class="text">
-									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+									<h1>We Provide <span>Body Building</span> Services That You Can <span>Trust!</span></h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
 									<div class="button">
 										<a href="#" class="btn">Get Appointment</a>
@@ -94,7 +94,7 @@
 									</div>
 									<div class="single-content">
 										<span>Fusce Porttitor</span>
-										<h4>Doctors Timetable</h4>
+										<h4>Trainers Timetable</h4>
 										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
 										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
 									</div>
@@ -157,7 +157,7 @@
 							<div class="signle-icon">
 								<i class="icofont icofont-medical-sign-alt"></i>
 							</div>
-							<h3>Enriched Pharmecy</h3>
+							<h3>Enriched</h3>
 							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
 						</div>
 						<!-- End Single features -->
@@ -168,7 +168,7 @@
 							<div class="signle-icon">
 								<i class="icofont icofont-stethoscope"></i>
 							</div>
-							<h3>Medical Treatment</h3>
+							<h3>First Aid</h3>
 							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
 						</div>
 						<!-- End Single features -->
@@ -188,7 +188,7 @@
 							<i class="icofont icofont-home"></i>
 							<div class="content">
 								<span class="counter">3468</span>
-								<p>Hospital Rooms</p>
+								<p>Gym Branches</p>
 							</div>
 						</div>
 						<!-- End Single Fun -->
@@ -199,7 +199,7 @@
 							<i class="icofont icofont-user-alt-3"></i>
 							<div class="content">
 								<span class="counter">557</span>
-								<p>Specialist Doctors</p>
+								<p>Specialist Trainers</p>
 							</div>
 						</div>
 						<!-- End Single Fun -->
@@ -210,7 +210,7 @@
 							<i class="icofont-simple-smile"></i>
 							<div class="content">
 								<span class="counter">4379</span>
-								<p>Happy Patients</p>
+								<p>Happy Customers</p>
 							</div>
 						</div>
 						<!-- End Single Fun -->

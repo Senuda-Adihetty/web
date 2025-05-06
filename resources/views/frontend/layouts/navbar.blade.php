@@ -1,7 +1,7 @@
 <!-- Header Area -->
 <header class="header" >
     <!-- Topbar -->
-    <div class="topbar">
+    {{--  <div class="topbar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-5 col-12">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  --}}
     <!-- End Topbar -->
     <!-- Header Inner -->
     <div class="header-inner">
@@ -38,7 +38,9 @@
                     <div class="col-lg-3 col-md-3 col-12">
                         <!-- Start Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="{{asset('frontend/1/img/logo.png')}}" alt="#"></a>
+                            {{--  <a href="index.html"><img src="{{asset('frontend/1/img/logo.png')}}" alt="#"></a>  --}}
+                            <h1> The GYM</h1>
+                            <p>Fitness & Health</p>
                         </div>
                         <!-- End Logo -->
                         <!-- Mobile Nav -->
@@ -55,7 +57,7 @@
                                             <li><a href="index.html">Home Page 1</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Doctos </a></li>
+                                    <li><a href="#">Trainers </a></li>
                                     <li><a href="#">Services </a></li>
                                     <li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
                                         <ul class="dropdown">

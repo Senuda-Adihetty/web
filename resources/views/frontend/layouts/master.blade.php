@@ -45,7 +45,7 @@
     </head>
     <body>
 
-		<!-- Preloader -->
+		<!-- Preloader-->
         <div class="preloader">
             <div class="loader">
                 <div class="loader-outter"></div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <!-- End Preloader -->
+         <!--End Preloader-->
 
 		<!-- Get Pro Button -->
 		<ul class="pro-features">
