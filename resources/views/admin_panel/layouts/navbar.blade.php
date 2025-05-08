@@ -15,13 +15,29 @@
     <!--end::Start Navbar Links-->
     <!--begin::End Navbar Links-->
     <ul class="navbar-nav ms-auto">
-      <!--begin::Navbar Search-->
+
+        {{--  <!--begin::Dark Mode Toggle-->  --}}
+        <li class="nav-item">
+        <div class="form-check form-switch p-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckChecked"
+              checked
+              onclick="myFunction()"
+            >
+          </div>
+        </li>
+
+      {{--  <!--begin::Navbar Search-->
       <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="bi bi-search"></i>
         </a>
       </li>
-      <!--end::Navbar Search-->
+      <!--end::Navbar Search-->  --}}
+
       <!--begin::Messages Dropdown Menu-->
       <li class="nav-item dropdown">
         <a class="nav-link" data-bs-toggle="dropdown" href="#">

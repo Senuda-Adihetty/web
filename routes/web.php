@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\admin\sliderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\slider;
 
  Route::get('/', function () {
-     return view('frontend.Home');
+
+    $sliders = slider::all();
+     return view('frontend.Home', compact('sliders'));
  });
 
 Route::get('/dashboard', function () {
@@ -16,5 +20,22 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+Route::controller(sliderController::class)->middleware(['auth', 'verified'])->group(function (){
+    Route::get('/slideIndex','SlideEditor')->name('slider.index');
+    Route::post('/slideSave','SlideStore')->name('slider.save');
+    // Route::post('/slideUpdate','SlideUpdater')->name('slider.update');
+    // Route::get('/slideDelete/{id}','SlideDelete')->name('slider.delete');
+
+    Route::post('/slideIndex/{id}',[sliderController::class,'SlideUpdater'])->name('slider.update');;
+
+    Route::get('/slide/delete/{id}', [sliderController::class, 'SlideDelete'])->name('slider.delete');
+
+
+
+});
+
+
 
 require __DIR__.'/auth.php';
