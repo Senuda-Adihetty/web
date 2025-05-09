@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 use function PHPUnit\Framework\returnSelf;
@@ -28,7 +29,7 @@ class sliderController extends Controller
             'image_link'           => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
             'more_infoLink'        => 'required|string',
             'more_infoLink2'       => 'required|string',
-        ]);
+        ]); 
 
         if ($request->hasFile('image_link')) {
             $imagepath = $request->file('image_link')->store('slides', 'public');
@@ -77,6 +78,7 @@ class sliderController extends Controller
         if ($request->hasFile('image_link')) {
             $update->image_link = $imagepath;
         }
+
 
         $update->more_infoLink        =   $validatedData['more_infoLink'];
         $update->more_infoLink2       =   $validatedData['more_infoLink2'];

@@ -22,18 +22,21 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::controller(sliderController::class)->middleware(['auth', 'verified'])->group(function (){
-    Route::get('/slideIndex','SlideEditor')->name('slider.index');
-    Route::post('/slideSave','SlideStore')->name('slider.save');
-    // Route::post('/slideUpdate','SlideUpdater')->name('slider.update');
-    // Route::get('/slideDelete/{id}','SlideDelete')->name('slider.delete');
+// Route::controller(sliderController::class)->middleware(['auth', 'verified'])->group(function (){
+//     Route::get('/slideIndex','SlideEditor')->name('slider.index');
+//     Route::post('/slideSave','SlideStore')->name('slider.save');
 
-    Route::post('/slideIndex/{id}',[sliderController::class,'SlideUpdater'])->name('slider.update');;
+//     Route::post('/slideIndex/{id}',[sliderController::class,'SlideUpdater'])->name('slider.update');;
 
-    Route::get('/slide/delete/{id}', [sliderController::class, 'SlideDelete'])->name('slider.delete');
+//     Route::get('/slide/delete/{id}', [sliderController::class, 'SlideDelete'])->name('slider.delete');
 
+// });
 
-
+Route::controller(sliderController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/slideIndex', 'SlideEditor')->name('slider.index');
+    Route::post('/slideSave', 'SlideStore')->name('slider.save');
+    Route::post('/slideIndex/{id}', 'SlideUpdater')->name('slider.update');
+    Route::get('/slide/delete/{id}', 'SlideDelete')->name('slider.delete');
 });
 
 
