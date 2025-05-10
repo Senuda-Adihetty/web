@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
-            $table->string('first_headingBlack');
-            $table->string('first_headingBlue');
-            $table->string('second_headingBlack');
-            $table->string('second_headingBlue');
+            $table->string('first_headingBlack')->nullable();
+            $table->string('first_headingBlue')->nullable();
+            $table->string('second_headingBlack')->nullable();
+            $table->string('second_headingBlue')->nullable();
             $table->string('mini_para');
             $table->string('image_link');
-            $table->string('more_infoLink')->nullable;
-            $table->string('more_infoLink2')->nullable;
+            $table->string('more_infoLink')->nullable();
+            $table->string('more_infoLink2')->nullable();
             $table->timestamps();
         });
     }

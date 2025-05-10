@@ -6,10 +6,16 @@
                 <div class="col-lg-7">
                     <div class="text">
                         <br>
-                        <h1> {{ $slider->first_headingBlack }} <span>{{ $slider->first_headingBlue }}</span>
-                            <br>
-
-                            {{ $slider->second_headingBlack }} <span> {{ $slider->second_headingBlue }}</span>
+                        <h1>
+                             {{ $slider->first_headingBlack }}
+                             <span>
+                                {{ $slider->first_headingBlue }}
+                            </span>
+                            
+                         {{ $slider->second_headingBlack }}
+                         <span>
+                            {{ $slider->second_headingBlue }}
+                        </span>
                         </h1>
 
                         <p> {{ $slider->mini_para }} </p>

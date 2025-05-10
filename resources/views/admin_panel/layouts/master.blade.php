@@ -77,13 +77,15 @@
 
 
 
-      <!--begin::App Main-->
+      {{--  begin::App Main  --}}
+      
       <main class="app-main">
 
 @yield('content')
 
       </main>
-      <!--end::App Main-->
+
+      {{--  end::App Main  --}}
 
 
 
@@ -387,7 +389,7 @@
                 });
             });
         </script>  --}}
-        
+
     <!--end::Script-->
   </body>
   <!--end::Body-->

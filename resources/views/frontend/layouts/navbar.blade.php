@@ -77,7 +77,7 @@
                     </div>
                     <div class="col-lg-2 col-12">
                         <div class="get-quote">
-                            <a href="appointment.html" class="btn">Book Appointment</a>
+                            <a href="{{ url('login')}}" class="btn">login</a>
                         </div>
                     </div>
                 </div>

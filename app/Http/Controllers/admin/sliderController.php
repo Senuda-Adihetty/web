@@ -21,15 +21,15 @@ class sliderController extends Controller
     public function SlideStore(Request $request)
     {
         $validatedData = $request->validate([
-            'first_headingBlack'   => 'required|string|max:255',
-            'first_headingBlue'    => 'required|string|max:255',
-            'second_headingBlack'  => 'required|string|max:255',
-            'second_headingBlue'   => 'required|string|max:255',
-            'mini_para'            => 'required|string|max:1000',
+            'first_headingBlack'   => 'max:255',
+            'first_headingBlue'    => 'max:255',
+            'second_headingBlack'  => 'max:255',
+            'second_headingBlue'   => 'max:255',
+            'mini_para'            => 'required|string|max:1406',
             'image_link'           => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
-            'more_infoLink'        => 'required|string',
-            'more_infoLink2'       => 'required|string',
-        ]); 
+            'more_infoLink'        => 'max:255',
+            'more_infoLink2'       => 'max:255',
+        ]);
 
         if ($request->hasFile('image_link')) {
             $imagepath = $request->file('image_link')->store('slides', 'public');
@@ -53,13 +53,14 @@ class sliderController extends Controller
     {
 
         $validatedData = $request->validate([
-            'first_headingBlack'   => 'required|string|max:255',
-            'first_headingBlue'    => 'required|string|max:255',
-            'second_headingBlack'  => 'required|string|max:255',
-            'second_headingBlue'   => 'required|string|max:255',
-            'mini_para'            => 'required|string|max:1000',
-            'more_infoLink'        => 'required|string',
-            'more_infoLink2'       => 'required|string',
+            'first_headingBlack'   => 'max:255',
+            'first_headingBlue'    => 'max:255',
+            'second_headingBlack'  => 'max:255',
+            'second_headingBlue'   => 'max:255',
+            'mini_para'            => 'required|string|max:1406',
+
+            'more_infoLink'        => 'max:255',
+            'more_infoLink2'       => 'max:255',
         ]);
 
 

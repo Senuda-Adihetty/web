@@ -6,6 +6,7 @@
 		<!-- Slider Area -->
 		<section class="slider">
 			<div class="hero-slider">
+
 				<!-- Start Single Slider -->
                 @include('frontend.Home.slider')
 				<!-- End Single Slider -->
@@ -58,16 +59,17 @@
 				<div class="schedule-inner">
 					<div class="row">
 						<div class="col-lg-4 col-md-6 col-12 ">
+
 							<!-- single-schedule -->
 							<div class="single-schedule first">
 								<div class="inner">
 									<div class="icon">
-										<i class="fa fa-ambulance"></i>
+										<i class="fa fa-bullhorn"></i>
 									</div>
 									<div class="single-content">
-										<span>Lorem Amet</span>
-										<h4>Emergency Cases</h4>
-										<p>Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</p>
+										<span>anousement Area</span>
+										<h4>Title</h4>
+										<p>detail area</p>
 										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
 									</div>
 								</div>
@@ -116,55 +118,56 @@
 		<!--/End Start schedule Area -->
 
 		<!-- Start Feautes -->
-		<section class="Feautes section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section-title">
-							<h2>We Are Always Ready to Help You & Your Family</h2>
-							<img src="{{asset('frontend/1/img/section-img.png')}}" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4 col-12">
-						<!-- Start Single features -->
-						<div class="single-features">
-							<div class="signle-icon">
-								<i class="icofont icofont-ambulance-cross"></i>
-							</div>
-							<h3>Emergency Help</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-						</div>
-						<!-- End Single features -->
-					</div>
-					<div class="col-lg-4 col-12">
-						<!-- Start Single features -->
-						<div class="single-features">
-							<div class="signle-icon">
-								<i class="icofont icofont-medical-sign-alt"></i>
-							</div>
-							<h3>Enriched</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-						</div>
-						<!-- End Single features -->
-					</div>
-					<div class="col-lg-4 col-12">
-						<!-- Start Single features -->
-						<div class="single-features last">
-							<div class="signle-icon">
-								<i class="icofont icofont-stethoscope"></i>
-							</div>
-							<h3>First Aid</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
-						</div>
-						<!-- End Single features -->
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/ End Feautes -->
+    <section class="Feautes section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>BENEFITS OF REGULAR EXERCISE</h2>
+                        <img src="{{('homepage/img/section-img.png')}}" alt="#">
+                        <p>Exercise is defined as any physical activity that makes your muscles work and requires your body to burn calories. Maintaining an active lifestyle offers a multitude of health benefits, positively impacting your physical and mental well-being. In fact, it has the potential to extend your lifespan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <!-- Start Single features -->
+                    <div class="single-features">
+                        <div class="signle-icon">
+                            <i class="icofont icofont-heart-beat"></i>
+                        </div>
+                        <h3>Improved Physical Health</h3>
+                        <p>Regular exercise can lead to enhanced cardiovascular health, stronger muscles and bones, improved flexibility, and increased endurance. It also reduces the risk of chronic diseases such as heart disease, diabetes, and certain types of cancer.</p>
+                    </div>
+                    <!-- End Single features -->
+                </div>
+                <div class="col-lg-4 col-12">
+                    <!-- Start Single features -->
+                    <div class="single-features">
+                        <div class="signle-icon">
+                            <i class="icofont icofont-brain-alt"></i>
+                        </div>
+                        <h3>Enhanced Mental Health</h3>
+                        <p>Exercise releases endorphins, often referred to as the 'feel-good' hormones, which can elevate mood and reduce feelings of stress, anxiety, and depression. It can also improve sleep quality and help manage conditions such as insomnia.</p>
+                    </div>
+                    <!-- End Single features -->
+                </div>
+                <div class="col-lg-4 col-12">
+                    <!-- Start Single features -->
+                    <div class="single-features last">
+                        <div class="signle-icon">
+                            <i class="icofont icofont-muscle-weight"></i>
+
+                        </div>
+                        <h3>Increased Energy Levels</h3>
+                        <p>Regular physical activity improves blood circulation and oxygen delivery to the body, resulting in increased energy levels and reduced fatigue.</p>
+                    </div>
+                    <!-- End Single features -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Feautes -->
 
 		<!-- Start Fun-facts -->
 		<div id="fun-facts" class="fun-facts section overlay">
@@ -218,6 +221,7 @@
 			</div>
 		</div>
 		<!--/ End Fun-facts -->
+
 
 		<!-- Start Why choose -->
 		<section class="why-choose section" >
