@@ -30,16 +30,16 @@
           </div>
         </li>
 
-      {{--  <!--begin::Navbar Search-->
-      <li class="nav-item">
+        <!--begin::Navbar Search-->
+      {{--  <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="bi bi-search"></i>
         </a>
-      </li>
-      <!--end::Navbar Search-->  --}}
+      </li>  --}}
+      <!--end::Navbar Search-->
 
       <!--begin::Messages Dropdown Menu-->
-      <li class="nav-item dropdown">
+      {{--  <li class="nav-item dropdown">
         <a class="nav-link" data-bs-toggle="dropdown" href="#">
           <i class="bi bi-chat-text"></i>
           <span class="navbar-badge badge text-bg-danger">3</span>
@@ -125,10 +125,10 @@
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
-      </li>
+      </li>  --}}
       <!--end::Messages Dropdown Menu-->
       <!--begin::Notifications Dropdown Menu-->
-      <li class="nav-item dropdown">
+      {{--  <li class="nav-item dropdown">
         <a class="nav-link" data-bs-toggle="dropdown" href="#">
           <i class="bi bi-bell-fill"></i>
           <span class="navbar-badge badge text-bg-warning">15</span>
@@ -153,8 +153,11 @@
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer"> See All Notifications </a>
         </div>
-      </li>
+      </li>  --}}
       <!--end::Notifications Dropdown Menu-->
+
+
+
       <!--begin::Fullscreen Toggle-->
       <li class="nav-item">
         <a class="nav-link" href="#" data-lte-toggle="fullscreen">
@@ -163,44 +166,41 @@
         </a>
       </li>
       <!--end::Fullscreen Toggle-->
+
+
       <!--begin::User Menu Dropdown-->
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
           <img
-            src="{{ asset('admin_panel/assets/img/user2-160x160.jpg') }}"
+            src="{{ asset('storage/' . Auth::user()->image) }}"
+
             class="user-image rounded-circle shadow"
             alt="User Image"
           />
-          <span class="d-none d-md-inline">Alexander Pierce</span>
+          <span class="d-none d-md-inline"> {{ Auth::user()->name }}</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
           <!--begin::User Image-->
           <li class="user-header text-bg-primary">
             <img
-              src="{{ asset('admin_panel/assets/img/user2-160x160.jpg') }}"
+                src="{{ asset('storage/' . Auth::user()->image) }}"
               class="rounded-circle shadow"
               alt="User Image"
             />
             <p>
-              Alexander Pierce - Web Developer
-              <small>Member since Nov. 2023</small>
+               {{ Auth::user()->name }}
+              <small>Member since  {{ Auth::user()->created_at->format('M. Y') }}</small>
             </p>
           </li>
           <!--end::User Image-->
           <!--begin::Menu Body-->
           <li class="user-body">
-            <!--begin::Row-->
-            <div class="row">
-              <div class="col-4 text-center"><a href="#">Followers</a></div>
-              <div class="col-4 text-center"><a href="#">Sales</a></div>
-              <div class="col-4 text-center"><a href="#">Friends</a></div>
-            </div>
-            <!--end::Row-->
+           
           </li>
           <!--end::Menu Body-->
           <!--begin::Menu Footer-->
           <li class="user-footer">
-            <a href="#" class="btn btn-default btn-flat">Profile</a>
+            <a href="/profile" class="btn btn-default btn-flat">Profile</a>
 
             {{--  Authentication (LOGOUT)  --}}
             <form method="POST" action="{{ route('logout') }}">
@@ -208,6 +208,8 @@
 
             <button type="submit" class="dropdown-item">Sign out</button>
             </form>
+
+
 
           </li>
 

@@ -66,7 +66,7 @@
                     <form method="POST" action="/slideSave" enctype="multipart/form-data">
                         @csrf
 
-                        <div class="modal-body">
+                        <div class="modal-body">    
 
                             {{--  First Line Black Part  --}}
                             <div class="mb-3">
@@ -186,7 +186,7 @@
                         </div>
                         {{--  end minimize and close tools  --}}
 
-                        <h3 class="card-title">Bordered Table</h3>
+                        <h3 class="card-title">Available Slides</h3>
                     </div>
                     {{--  <div class="card-header">
                         h
@@ -194,7 +194,7 @@
 
                     <div class="card-body">
 
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
 
@@ -261,6 +261,7 @@
                                                 data-bs-target="#slidermodal{{ $slider->id }}">
                                                 Edit
                                             </button>
+<br><br>
 
                                             {{--  <a href="/slideDelete/{{ $slider->id }}"
                                                 class="btn btn-danger">Delete</a>  --}}
@@ -444,12 +445,6 @@
         <!--end::Container-->
         </div>
         <!--end::App Content Header-->
-
-
-
-
-
-
 
 
     @endsection

@@ -37,7 +37,7 @@
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon bi bi-palette"></i>
-                        <p>Theme Generate</p>
+                        <p>Packages</p>
                     </a>
                 </li>
 
@@ -219,10 +219,10 @@
 
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/anousementIndex" class="nav-link">
                                 <i class="nav-icon bi bi-box-arrow-in-right"></i>
                                 <p>
-                                    Version 2
+                                    Anousement
                                 </p>
                             </a>
                         </li>

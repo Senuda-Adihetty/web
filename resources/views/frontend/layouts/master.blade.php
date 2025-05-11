@@ -42,6 +42,8 @@
         <link rel="stylesheet" href="{{asset('frontend/1/style.css')}}">
         <link rel="stylesheet" href="{{asset('frontend/1/css/responsive.css')}}">
 
+
+
     </head>
     <body>
 
@@ -131,5 +133,8 @@
 		<script src="{{asset('frontend/1/js/bootstrap.min.js')}}"></script>
 		<!-- Main JS -->
 		<script src="{{asset('frontend/1/js/main.js')}}"></script>
+
+
+
     </body>
 </html>

@@ -52,7 +52,7 @@ class sliderController extends Controller
     public function SlideUpdater(Request $request)
     {
 
-        $validatedData = $request->validate([
+        $validatedData = $request->validate([     
             'first_headingBlack'   => 'max:255',
             'first_headingBlue'    => 'max:255',
             'second_headingBlack'  => 'max:255',
@@ -90,15 +90,6 @@ class sliderController extends Controller
         return redirect()->back()->with('success', 'Slide updated successfully.');
 
     }
-
-
-
-
-
-
-
-
-
 
 
     public function SlideDelete($id)

@@ -1,5 +1,5 @@
 <!-- Header Area -->
-<header class="header" >
+<header class="header">
     <!-- Topbar -->
     {{--  <div class="topbar">
         <div class="container">
@@ -38,7 +38,7 @@
                     <div class="col-lg-3 col-md-3 col-12">
                         <!-- Start Logo -->
                         <div class="logo">
-                            {{--  <a href="index.html"><img src="{{asset('frontend/1/img/logo.png')}}" alt="#"></a>  --}}
+
                             <h1> The GYM</h1>
                             <p>Fitness & Health</p>
                         </div>
@@ -50,9 +50,11 @@
                     <div class="col-lg-7 col-md-9 col-12">
                         <!-- Main Menu -->
                         <div class="main-menu">
+
                             <nav class="navigation">
                                 <ul class="nav menu">
-                                    <li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
+                                    <li class="active"><a href="#"> Home
+                                            <i class="icofont-rounded-down"></i></a>
                                         <ul class="dropdown">
                                             <li><a href="index.html">Home Page 1</a></li>
                                         </ul>
@@ -72,17 +74,32 @@
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </nav>
+                            <!--/ End Navigation -->
+
                         </div>
                         <!--/ End Main Menu -->
                     </div>
                     <div class="col-lg-2 col-12">
+
                         <div class="get-quote">
-                            <a href="{{ url('login')}}" class="btn">login</a>
-                        </div>
+                        @if (Auth::check())
+                            <!-- Check if the user is logged in -->
+                            <a href="{{ url('dashboard') }}" class="btn"
+                                style="border-radius: 50px; box-shadow: 0px 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+                                Dashboard
+                            </a>
+                        @else
+                            <!-- If the user is not logged in -->
+                            <a href="{{ url('login') }}" class="btn"
+                                style="border-radius: 50px; box-shadow: 0px 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+                                Login
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!--/ End Header Inner -->
 </header>

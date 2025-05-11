@@ -78,10 +78,10 @@
 
 
       {{--  begin::App Main  --}}
-      
+
       <main class="app-main">
 
-@yield('content')
+           @yield('content')
 
       </main>
 
