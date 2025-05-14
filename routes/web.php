@@ -9,12 +9,31 @@ use App\Models\slider;
 use App\Models\anousementModel;
 
 
-
  Route::get('/', function () {
 
     $sliders = slider::all();
     $anousements = anousementModel::all();
      return view('frontend.Home', compact('sliders', 'anousements'));
+ });
+
+Route::get('/blogs', function () {
+
+     return view('frontend.blogs');
+ });
+
+Route::get('/contact', function () {
+
+     return view('frontend.contact');
+ });
+
+Route::get('/about', function () {
+
+     return view('frontend.about');
+ });
+
+Route::get('/trainers', function () {
+
+     return view('frontend.trainers');
  });
 
 
