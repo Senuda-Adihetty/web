@@ -2,70 +2,71 @@
  <header class="header">
      {{--  Topbar  --}}
 
-     {{--  <div class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-5 col-12">
-                    <!-- Contact -->
+     <div class="topbar">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-6 col-md-5 col-12">
+                     {{--  Contact  --}}
+                     <ul class="top-link">
+                         <li>
+                             <a href="#">
+                                 <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                 Find A Location
+                             </a>
+                         </li>
 
-                    <ul class="top-link">
-                        <li><a href="https://www.facebook.com/senux.Adihetty">Created By Senuda Adihetty</a></li>
-                    <!--	<li><a href="#">Doctors</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQ</a></li> -->
-                    </ul>
-
-                    <!-- End Contact -->
-                </div>
-                <div class="col-lg-6 col-md-7 col-12">
-                    <!-- Top Contact -->
-                    <ul class="top-contact">
-                        <li><i class="fa fa-phone"></i>+94 70 5851 814</li>
-                        <li><i class="fa fa-envelope"></i>
-                            <a href="senuadihetty29@gmail.com">
-                            senuadihetty29@gmail.com</a></li>
-                    </ul>
-                    <!-- End Top Contact -->
-                </div>
-            </div>
-        </div>
-    </div>  --}}
+                     </ul>
+                     {{--  End Contact  --}}
+                 </div>
+                 <div class="col-lg-6 col-md-7 col-12">
+                     {{--  Top Contact  --}}
+                     <ul class="top-contact">
+                         <li>
+                             <a href="#"><i class="fab fa-facebook-f"></i></a>
+                             <a href="#"><i class="fab fa-twitter"></i></a>
+                             <a href="#"><i class="fab fa-instagram"></i></a>
+                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                         </li>
+                            <li><i class="fa fa-phone"></i>+880 1234 56789</li>
+                     </ul>
+                     {{--  End Top Contact  --}}
+                 </div>
+             </div>
+         </div>
+     </div>
 
      {{--  End Topbar  --}}
+
      {{--  Header Inner  --}}
      <div class="header-inner">
          <div class="container">
              <div class="inner">
                  <div class="row">
                      <div class="col-lg-3 col-md-3 col-12">
-
-                         {{--  Start Logo  --}}
-                         <img src="{{ asset('signIN/img/logo.png') }}" alt="#" class="img-fluid shadow"
-                             style="border-radius: 2rem 0 0 2rem ; width: 40px; height: 50px;">
-                         <div class="logo">
-
-                             <h1> The GYM</h1>
-                             <p>Fitness & Health</p>
-
-                         </div>
-
-                         {{--  End Logo  --}}
-
+                         <a href="/" class="d-flex align-items-center">
+                             <div class="d-flex align-items-center mt-2">
+                                 <img src="{{ asset('signIN/img/logo.png') }}" alt="The GYM Logo"
+                                     class="img-fluid shadow mr-2" style="width: 50px; height: 65px;">
+                                 <div>
+                                     <h1 class="mb-0" style="font-size: 24px;">The GYM</h1>
+                                     <p class="mb-0" style="font-size: 14px;">Fitness Center</p>
+                                 </div>
+                             </div>
+                         </a>
                          {{--  Mobile Nav  --}}
-                         <div class="mobile-nav"></div>
+                         <div class="mobile-nav" style="margin-top: -70px;"></div>
                          {{--  End Mobile Nav  --}}
-
                      </div>
-                     <div class="col-lg-7 col-md-9 col-12">
-                         <!-- Main Menu -->
-                         <div class="main-menu">
 
+                     <div class="col-lg-7 col-md-9 col-12">
+                         {{--  Main Menu  --}}
+                         <div class="main-menu">
                              <nav class="navigation">
                                  <ul class="nav menu">
-                                     <li class="active"><a href="/"> Home </a></li>
+                                     <li><a href="/"> Home </a></li>
                                      <li><a href="/trainers"> Trainers </a></li>
-                                     <li><a href="#"> About </a></li>
-                                     <li><a href="#"> Packages </a></li>
+                                     <li><a href="/about"> About </a></li>
+                                     <li><a href="/packages"> Packages </a></li>
                                      <li><a href="/blogs"> Blogs </a></li>
                                      <li><a href="/contact"> Contact Us </a></li>
                                  </ul>
@@ -74,6 +75,7 @@
                          </div>
                          {{--  End Main Menu  --}}
                      </div>
+
                      <div class="col-lg-2 col-12">
 
                          <div class="get-quote">

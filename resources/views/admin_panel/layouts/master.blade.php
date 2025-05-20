@@ -44,10 +44,12 @@
     {{--  jsvectormap   --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
         integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
-        
+
     {{--  Google Material Icons round  --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" />
 
+    {{--  DataTables CSS (for entries per page, pagination, searching, sorting full functionality) --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
     <style>
         .text-muted {
@@ -63,7 +65,7 @@
 
 {{--  begin::Body  --}}
 
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary data-bs-theme="light">
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
 
 
     {{--  begin::App Wrapper  --}}
@@ -361,15 +363,16 @@
         // Run when page loads
         window.onload = function() {
             var element = document.body;
-            var toggle = document.getElementById("flexSwitchCheckChecked");
+            var savedTheme = localStorage.getItem("theme") || "light";
+            element.dataset.bsTheme = savedTheme;
 
-            // Default theme
-            if (!element.dataset.bsTheme) {
-                element.dataset.bsTheme = "light";
+            // Set icon according to saved theme
+            const icon = document.getElementById("themeIcon");
+            if (savedTheme === "dark") {
+                icon.classList.add("bi-sun-fill");
+            } else {
+                icon.classList.add("bi-moon-fill");
             }
-
-            // Set toggle state based on current theme
-            toggle.checked = element.dataset.bsTheme === "dark";
         }
 
         function toggleIcon(element) {
@@ -377,25 +380,33 @@
             icon.classList.toggle('bi-moon-fill');
             icon.classList.toggle('bi-sun-fill');
 
-            myFunction(); // Call your existing function here
-
+            myFunction(); // Change theme
         }
-        // Toggle theme
+
         function myFunction() {
             var element = document.body;
-            element.dataset.bsTheme =
-                element.dataset.bsTheme === "light" ? "dark" : "light";
+            var currentTheme = element.dataset.bsTheme;
+            var newTheme = currentTheme === "light" ? "dark" : "light";
+            element.dataset.bsTheme = newTheme;
 
-            // Optional: save preference to localStorage
-            // localStorage.setItem("theme", element.dataset.bsTheme);
-            console.log("myFunction called!");
-
+            // Save to localStorage
+            localStorage.setItem("theme", newTheme);
         }
     </script>
+
 
     {{--  This is Sweet Alert script (pop-up message)  --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+    {{--  jQuery(for entries per page, pagination, searching, sorting full functionality)  --}}
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    {{--  DataTables JS(for entries per page, pagination, searching, sorting full functionality)  --}}
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+    @stack('scripts')
 
     {{--  end::Script  --}}
 </body>

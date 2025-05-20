@@ -66,7 +66,7 @@
                     <form method="POST" action="/slideSave" enctype="multipart/form-data">
                         @csrf
 
-                        <div class="modal-body">    
+                        <div class="modal-body">
 
                             {{--  First Line Black Part  --}}
                             <div class="mb-3">
@@ -188,13 +188,11 @@
 
                         <h3 class="card-title">Available Slides</h3>
                     </div>
-                    {{--  <div class="card-header">
-                        h
-                    </div>  --}}
+
 
                     <div class="card-body">
 
-                        <table class="table table-bordered table-striped table-hover">
+                        <table class="table table-bordered table-striped table-hover" id="example">
                             <thead>
                                 <tr>
 
@@ -261,7 +259,7 @@
                                                 data-bs-target="#slidermodal{{ $slider->id }}">
                                                 Edit
                                             </button>
-<br><br>
+                                            <br><br>
 
                                             {{--  <a href="/slideDelete/{{ $slider->id }}"
                                                 class="btn btn-danger">Delete</a>  --}}
@@ -421,7 +419,8 @@
                     </table>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer clearfix">
+                {{--  <div class="card-footer clearfix">
+                    <nav>
                     <ul class="pagination pagination-sm m-0 float-end">
                         <li class="page-item"><a class="page-link" href="#">«</a></li>
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -429,7 +428,8 @@
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">»</a></li>
                     </ul>
-                </div>
+                </nav>
+                </div>  --}}
             </div>
             {{--  end table  --}}
 
@@ -448,3 +448,18 @@
 
 
     @endsection
+
+
+    @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable({
+                    pageLength: 5,
+                    lengthMenu: [
+                        [5, 10, 25, 50, 100],
+                        [5, 10, 25, 50, 100]
+                    ]
+                });
+            });
+        </script>
+    @endpush

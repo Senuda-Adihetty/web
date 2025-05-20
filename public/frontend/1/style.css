@@ -912,7 +912,7 @@ body{
 	padding:120px 0;
 }
 .fun-facts{
-	background:url('img/fun-bg.jpg');
+
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -1078,7 +1078,7 @@ body{
 	Start Call to action CSS
 =================================*/
 .call-action{
-	background-image:url('img/call-bg.jpg');
+
 	background-size:cover;
 	background-position:center;
 	position:relative;
@@ -1746,7 +1746,65 @@ body{
 /*====================
 	Start Team CSS
 ======================*/
-.team{
+
+.single_team {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.team_thumb {
+    position: relative;
+}
+
+.team_thumb img {
+    width: 100%;
+    display: block;
+}
+
+.team_hover {
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* black transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.single_team:hover .team_hover {
+    opacity: 1;
+}
+
+.hover_inner ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.hover_inner ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.hover_inner ul li a {
+    color: #fff;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.hover_inner ul li a:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* .team{
 	background-image:url('img/testi-bg.jpg');
 	background-size:cover;
 	background-position:center;
@@ -1856,7 +1914,7 @@ body{
 .team .t-bottom h2 a:hover{
 	color:#1A76D1;
 }
-/*-- Doctor Details --*/
+
 .doctor-details-left {
 	-webkit-box-shadow: 0px 0px 10px 0px #ddd;
 	box-shadow: 0px 0px 10px 0px #ddd;
@@ -1993,7 +2051,7 @@ body{
 }
 .doctor-details-item .doctor-name .degree{
 	font-size: 16px;
-}
+} */
 /*====================
 	End Team CSS
 ======================*/
@@ -4178,3 +4236,13 @@ body{
 /*=========================
 	End Footer CSS
 ===========================*/
+
+@media (max-width: 568px) {
+    .header .logo {
+        display: flex !important;
+        align-items: center !important;
+    }
+    .header .logo img {
+        margin-right: 10px !important;
+    }
+}

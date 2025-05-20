@@ -12,7 +12,7 @@
 
     {{--  Title  --}}
     <title>The Gym Soft Web</title>
-{{--    --}}
+
     {{--  Favicon  --}}
     <link rel="icon" href="{{ asset('frontend/1/img/favicon.png') }}">
 
@@ -20,6 +20,9 @@
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     {{--  Bootstrap CSS  --}}
     <link rel="stylesheet" href="{{ asset('frontend/1/css/bootstrap.min.css') }}">
@@ -57,10 +60,8 @@
 
 <body>
 
-
-    
     {{--  Preloader  --}}
-    <div class="preloader">
+    {{--  <div class="preloader">
         <div class="loader">
             <div class="loader-outter"></div>
             <div class="loader-inner"></div>
@@ -72,7 +73,7 @@
                 </svg>
             </div>
         </div>
-    </div>
+    </div>  --}}
     {{--  End Preloader  --}}
 
     {{--  Get Pro Button  --}}
@@ -98,9 +99,6 @@
     {{--  Footer Area  --}}
     @include('frontend.layouts.footer')
     {{--  End Footer Area  --}}
-
-
-
 
     {{--  jquery Min JS  --}}
     <script src="{{ asset('frontend/1/js/jquery.min.js') }}"></script>
@@ -161,6 +159,43 @@
 
     {{--  Main JS  --}}
     <script src="{{ asset('frontend/1/js/main.js') }}"></script>
+
+    {{--  This is light and dark mode script  --}}
+    <script>
+        // Run when page loads
+        window.onload = function() {
+            var element = document.body;
+            var toggle = document.getElementById("flexSwitchCheckChecked");
+
+            // Default theme
+            if (!element.dataset.bsTheme) {
+                element.dataset.bsTheme = "light";
+            }
+
+            // Set toggle state based on current theme
+            toggle.checked = element.dataset.bsTheme === "dark";
+        }
+
+        function toggleIcon(element) {
+            const icon = element.querySelector('i');
+            icon.classList.toggle('bi-moon-fill');
+            icon.classList.toggle('bi-sun-fill');
+
+            myFunction(); // Call your existing function here
+
+        }
+        // Toggle theme
+        function myFunction() {
+            var element = document.body;
+            element.dataset.bsTheme =
+                element.dataset.bsTheme === "light" ? "dark" : "light";
+
+            // Optional: save preference to localStorage
+            // localStorage.setItem("theme", element.dataset.bsTheme);
+            console.log("myFunction called!");
+
+        }
+    </script>
 
 </body>
 

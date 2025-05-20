@@ -2,17 +2,17 @@
 
 
  @section('content')
-   {{--  Breadcrumbs  --}}
-     <div class="breadcrumbs section overlay" data-stellar-background-ratio="-0.5">
+     {{--  Breadcrumbs  --}}
+      <div class="breadcrumbs section overlay" data-stellar-background-ratio="-0.5">
          <div class="container">
              <div class="bread-inner">
                  <div class="row">
                      <div class="col-12">
-                         <h2>CONTACT US</h2>
+                         <h2>Why Choose Us</h2>
                          <ul class="bread-list">
                              <li><a href="/">Home</a></li>
                              <li><i class="icofont-simple-right"></i></li>
-                             <li class="active">Contact Us</li>
+                             <li class="active">About</li>
                          </ul>
                      </div>
                  </div>
@@ -20,4 +20,6 @@
          </div>
      </div>
      {{--  End Breadcrumbs  --}}
+
+
  @endsection

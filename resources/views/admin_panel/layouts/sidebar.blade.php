@@ -3,7 +3,7 @@
     {{--  begin::Sidebar Brand  --}}
     <div class="sidebar-brand">
         {{--  begin::Brand Link  --}}
-        <a href="./index.html" class="brand-link">
+        <a href="/dashboard" class="brand-link">
 
             {{--  begin::Brand Image  --}}
             <img src="{{ asset('admin_panel/assets/img/logo.png') }}" alt="AdminLTE Logo"
@@ -26,7 +26,7 @@
 
 
                 <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="/dashboard" class="nav-link active">
                         <span class="material-icons-round"> dashboard </span>
                         <p>
                             Dashboard
@@ -128,10 +128,10 @@
                 <li class="nav-header">Dashboard Settings</li>
 
                 <li class="nav-item">
-                    <a href="/anousementIndex" class="nav-link">
+                    <a href="/mem" class="nav-link">
                         <span class="material-icons-round"> settings </span>
                         <p>
-                            
+
                             Settings
 
                         </p>

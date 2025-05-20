@@ -80,7 +80,7 @@
                                         <br><br>
 
                                         <p class="mb-5 pb-lg-2" style="color: #0c56d0">
-                                            Don't have an account?
+                                            Do not have an account?
                                             <a href="{{ route('register') }}" style="color: #ff0000">
                                                 Register here
                                             </a>

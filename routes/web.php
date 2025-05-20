@@ -16,6 +16,11 @@ use App\Models\anousementModel;
      return view('frontend.Home', compact('sliders', 'anousements'));
  });
 
+ Route::get('/mem', function () {
+
+    return view('admin_panel.GMS.members');
+ });
+
 Route::get('/blogs', function () {
 
      return view('frontend.blogs');
@@ -35,6 +40,7 @@ Route::get('/trainers', function () {
 
      return view('frontend.trainers');
  });
+
 
 
 Route::get('/dashboard', function () {

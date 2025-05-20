@@ -1,9 +1,6 @@
 @extends('frontend.layouts.master')
 
-
 @section('content')
-
-
 
     <!-- Slider Area -->
     <section class="slider">
@@ -19,15 +16,13 @@
     </section>
     <!--/ End Slider Area -->
 
-
-
     <!-- Start Schedule Area -->
     <section class="schedule">
         <div class="container">
             <div class="schedule-inner">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 col-12 ">
+                    <div class="col-lg-8 col-md-6 col-12 ">
 
                         <div class="single-schedule middle">
                             <div class="inner">
@@ -43,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
+                    {{--  <div class="col-lg-4 col-md-6 col-12">
                         <!-- single-schedule -->
                         <div class="single-schedule middle">
                             <div class="inner">
@@ -59,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  --}}
 
                     <div class="col-lg-4 col-md-12 col-12">
                         <!-- single-schedule -->
@@ -149,7 +144,8 @@
     <!--/ End Feautes -->
 
     <!-- Start Fun-facts -->
-    <div id="fun-facts" class="fun-facts section overlay">
+    <div id="fun-facts" class="fun-facts section overlay" data-stellar-background-ratio="0.5"
+        style="background-image:url({{ asset('frontend/1/img/bg.png') }})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12">
@@ -200,7 +196,6 @@
         </div>
     </div>
     <!--/ End Fun-facts -->
-
 
     <!-- Start Why choose -->
     <section class="why-choose section">
@@ -266,18 +261,21 @@
     <!--/ End Why choose -->
 
     <!-- Start Call to action -->
-    <section class="call-action overlay" data-stellar-background-ratio="0.5">
+    <section class="call-action overlay" data-stellar-background-ratio="0.5"
+        style=" background-image:url({{ asset('frontend/1/img/bg.png') }})">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="content">
-                        <h2>Do you need Emergency Medical Care? Call @ 1234 56789</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec
-                            gravida.</p>
+                        <h2> Gym in down south galle Hapugala </h2>
+                        <br>
                         <div class="button">
-                            <a href="#" class="btn">Contact Now</a>
-                            <a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
+                            <a href="" class="btn video-popup mfp-iframe">
+                                <i class="fa fa-play"></i>
+                            </a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -526,8 +524,6 @@
     </section>
     <!--/ End Pricing Table -->
 
-
-
     <!-- Start Blog Area -->
     <section class="blog section" id="blog">
         <div class="container">
@@ -759,4 +755,5 @@
         </div>
     </section>
     <!-- /End Newsletter Area -->
+
 @endsection

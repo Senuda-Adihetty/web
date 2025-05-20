@@ -5,18 +5,29 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-footer">
-                        <h2>About Us</h2>
-                        <p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore
-                            dolore magna.</p>
-                        {{--  Social  --}}
-                        <ul class="social">
-                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="#"><i class="icofont-google-plus"></i></a></li>
-                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="#"><i class="icofont-vimeo"></i></a></li>
-                            <li><a href="#"><i class="icofont-pinterest"></i></a></li>
-                        </ul>
-                        {{--  End Social  --}}
+                        <div class="footer-item d-flex flex-column">
+                            <div class="footer-item">
+                                <div class="d-flex align-items-center mt-2 mb-3">
+                                    <img src="{{ asset('signIN/img/logo.png') }}" alt="The GYM Logo"
+                                        class="img-fluid shadow mr-2" style="width: 50px; height: 65px;">
+                                    <div>
+                                        <h1 class="mb-0 text-white" style="font-size: 24px;">The GYM</h1>
+                                        <p class="mb-0" style="font-size: 14px;">Fitness Center</p>
+                                    </div>
+                                </div>
+                                <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum
+                                    dolor sit
+                                    amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                            </div>
+
+                            <div class=" align-items-center justify-content-center justify-content-lg-end mt-3">
+                                <a class="text-white mx-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="text-white mx-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="text-white mx-2" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="text-white mx-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
@@ -37,7 +48,7 @@
                                             Links</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12">
+                            {{--  <div class="col-lg-6 col-md-6 col-12">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-caret-right"
                                                 aria-hidden="true"></i>Consuling</a></li>
@@ -50,7 +61,7 @@
                                     <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact
                                             Us</a></li>
                                 </ul>
-                            </div>
+                            </div>  --}}
                         </div>
                     </div>
                 </div>
@@ -82,18 +93,7 @@
         </div>
     </div>
     {{--  End Footer Top  --}}
-    {{--  Copyright  --}}
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="copyright-content">
-                        <p>© Copyright 2018 | All Rights Reserved by <a href="https://www.wpthemesgrid.com"
-                                target="_blank">wpthemesgrid.com</a> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{--  End Copyright  --}}
+
+
+
 </footer>
