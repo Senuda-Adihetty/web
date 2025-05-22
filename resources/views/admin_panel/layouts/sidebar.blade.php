@@ -26,7 +26,7 @@
 
 
                 <li class="nav-item menu-open">
-                    <a href="/dashboard" class="nav-link active">
+                    <a href="/dashboard" class="nav-link">
                         <span class="material-icons-round"> dashboard </span>
                         <p>
                             Dashboard

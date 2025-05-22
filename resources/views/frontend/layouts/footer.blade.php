@@ -8,7 +8,7 @@
                         <div class="footer-item d-flex flex-column">
                             <div class="footer-item">
                                 <div class="d-flex align-items-center mt-2 mb-3">
-                                    <img src="{{ asset('signIN/img/logo.png') }}" alt="The GYM Logo"
+                                    <img src="{{ asset('signIN/img/logo copy.png') }}" alt="The GYM Logo"
                                         class="img-fluid shadow mr-2" style="width: 50px; height: 65px;">
                                     <div>
                                         <h1 class="mb-0 text-white" style="font-size: 24px;">The GYM</h1>
