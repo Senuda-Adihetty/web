@@ -8,11 +8,11 @@
                         <div class="footer-item d-flex flex-column">
                             <div class="footer-item">
                                 <div class="d-flex align-items-center mt-2 mb-3">
-                                    <img src="{{ asset('signIN/img/logo copy.png') }}" alt="The GYM Logo"
+                                    <img src="{{ asset($setting['site_logo']) }}" alt="The GYM Logo"
                                         class="img-fluid shadow mr-2" style="width: 50px; height: 65px;">
                                     <div>
-                                        <h1 class="mb-0 text-white" style="font-size: 24px;">The GYM</h1>
-                                        <p class="mb-0" style="font-size: 14px;">Fitness Center</p>
+                                        <h1 class="mb-0 text-white" style="font-size: 24px;">{{ $main_settings['site_name'] }}</h1>
+                                        <p class="mb-0" style="font-size: 14px;">{{ $main_settings['site_description'] }}</p>
                                     </div>
                                 </div>
                                 <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum
@@ -21,10 +21,10 @@
                             </div>
 
                             <div class=" align-items-center justify-content-center justify-content-lg-end mt-3">
-                                <a class="text-white mx-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="text-white mx-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="text-white mx-2" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="text-white mx-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="text-white mx-2" href="{{ $main_settings['facebook_link'] }}"><i class="fab fa-facebook-f"></i></a>
+                                <a class="text-white mx-2" href="{{ $main_settings['x_link'] }}"><i class="fab fa-twitter"></i></a>
+                                <a class="text-white mx-2" href="{{ $main_settings['linkedin_link'] }}"><i class="fab fa-instagram"></i></a>
+                                <a class="text-white mx-2" href="{{ $main_settings['instagram_link'] }}"><i class="fab fa-linkedin-in"></i></a>
                             </div>
 
                         </div>
@@ -48,20 +48,7 @@
                                             Links</a></li>
                                 </ul>
                             </div>
-                            {{--  <div class="col-lg-6 col-md-6 col-12">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-caret-right"
-                                                aria-hidden="true"></i>Consuling</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right"
-                                                aria-hidden="true"></i>Finance</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right"
-                                                aria-hidden="true"></i>Testimonials</a></li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact
-                                            Us</a></li>
-                                </ul>
-                            </div>  --}}
+
                         </div>
                     </div>
                 </div>

@@ -2,44 +2,52 @@
 
 use App\Http\Controllers\admin\sliderController;
 use App\Http\Controllers\admin\anousementController;
+use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\main\packageContoller;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\settingsController as ControllersSettingsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\slider;
 use App\Models\anousementModel;
+use App\Models\settings;
 
 
- Route::get('/', function () {
+Route::get('/', function () {
+
+    $setting = Settings::all()->pluck('value', 'key')->toArray();
 
     $sliders = slider::all();
     $anousements = anousementModel::all();
-     return view('frontend.Home', compact('sliders', 'anousements'));
- });
+    return view('frontend.Home', compact('sliders', 'anousements', 'setting'));
+});
 
- Route::get('/mem', function () {
+
+Route::get('/mem', function () {
 
     return view('admin_panel.GMS.members');
- });
+});
 
 Route::get('/blogs', function () {
+    $setting = Settings::all()->pluck('value', 'key')->toArray();
 
-     return view('frontend.blogs');
- });
+    return view('frontend.blogs', compact('setting'));
+});
 
 Route::get('/contact', function () {
 
-     return view('frontend.contact');
- });
+    return view('frontend.contact');
+});
 
 Route::get('/about', function () {
+ $setting = Settings::all()->pluck('value', 'key')->toArray();
 
-     return view('frontend.about');
- });
+    return view('frontend.about', compact('setting'));
+});
 
 Route::get('/trainers', function () {
 
-     return view('frontend.trainers');
- });
+    return view('frontend.trainers');
+});
 
 
 
@@ -71,6 +79,10 @@ Route::controller(anousementController::class)->middleware(['auth', 'verified'])
 });
 
 
+Route::controller(settingsController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/settings', 'index')->name('settings');
+    Route::post('/settingUpdate', 'update')->name('settings.update');
+});
 
 // back end Routes
 
@@ -78,4 +90,4 @@ Route::controller(anousementController::class)->middleware(['auth', 'verified'])
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

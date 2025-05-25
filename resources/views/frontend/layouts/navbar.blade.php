@@ -22,12 +22,16 @@
                      {{--  Top Contact  --}}
                      <ul class="top-contact">
                          <li>
-                             <a href="#"><i class="fab fa-facebook-f"></i></a>
-                             <a href="#"><i class="fab fa-twitter"></i></a>
-                             <a href="#"><i class="fab fa-instagram"></i></a>
-                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                             <a href="{{ $main_settings['facebook_link'] }}">
+                                <i class="fab fa-facebook-f"></i></a>
+                             <a href="{{ $main_settings['x_link'] }}">
+                                <i class="fab fa-twitter"></i></a>
+                             <a href="{{ $main_settings['linkedin_link'] }}">
+                                <i class="fab fa-instagram"></i></a>
+                             <a href="{{ $main_settings['instagram_link'] }}">
+                                <i class="fab fa-linkedin-in"></i></a>
                          </li>
-                            <li><i class="fa fa-phone"></i>+880 1234 56789</li>
+                            <li><i class="fab fa-whatsapp"></i><i class="fa fa-phone"></i>+880 1234 56789</li>
                      </ul>
                      {{--  End Top Contact  --}}
                  </div>
@@ -45,11 +49,11 @@
                      <div class="col-lg-3 col-md-3 col-12">
                          <a href="/" class="d-flex align-items-center">
                              <div class="d-flex align-items-center mt-2">
-                                 <img src="{{ asset('signIN/img/logo.png') }}" alt="The GYM Logo"
+                                 <img src="{{ asset($setting['site_logo']) }}" alt="The GYM Logo"
                                      class="img-fluid shadow mr-2" style="width: 50px; height: 65px;">
                                  <div>
-                                     <h1 class="mb-0" style="font-size: 24px;">The GYM</h1>
-                                     <p class="mb-0" style="font-size: 14px;">Fitness Center</p>
+                                     <h1 class="mb-0" style="font-size: 24px;">{{ $main_settings['site_name'] }}</h1>
+                                     <p class="mb-0" style="font-size: 14px;">{{ $main_settings['site_description'] }}</p>
                                  </div>
                              </div>
                          </a>

@@ -21,73 +21,75 @@
      </div>
      {{--  End Breadcrumbs  --}}
 
-     <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="d-flex flex-column mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px; visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <h4 class="text-primary">Our Blog</h4>
-                    <h1 class="display-4 mb-4">Electricity News &amp; Updates</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, deserunt provident ab voluptates rerum eaque eum magni autem atque in minus laboriosam corrupti deleniti voluptatibus rem reiciendis modi veniam animi?
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/commercial-1.jpg" class="img-fluid w-100" alt="">
-                            </div>
-                            <div class="blog-heading ms-4">
-                                <a href="#" class="h4 mb-0 p-4">Electrifying Reads Explore Our Electricity</a>
-                            </div>
-                            <div class="blog-content bg-light p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 small"><i class="fa fa-calendar me-2"></i> April 2,2025</p>
-                                    <p class="mb-0 small"><i class="fa fa-tag me-2"></i> Electricity Corner</p>
-                                </div>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis rem distinctio tempora eum quam eligendi. Repudiandae voluptas voluptatibus quo itaque!
-                                </p>
-                                <a class="btn btn-primary py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/commercial-2.jpg" class="img-fluid w-100" alt="">
-                            </div>
-                            <div class="blog-heading ms-4">
-                                <a href="#" class="h4 mb-0 p-4">Empowering Energy Dive into Our Electricity </a>
-                            </div>
-                            <div class="blog-content bg-light p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 small"><i class="fa fa-calendar me-2"></i> April 2,2025</p>
-                                    <p class="mb-0 small"><i class="fa fa-tag me-2"></i> Electricity Corner</p>
-                                </div>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis rem distinctio tempora eum quam eligendi. Repudiandae voluptas voluptatibus quo itaque!
-                                </p>
-                                <a class="btn btn-primary py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/commercial-3.jpg" class="img-fluid w-100" alt="">
-                            </div>
-                            <div class="blog-heading ms-4">
-                                <a href="#" class="h4 mb-0 p-4">Electricity Explained: Bloggin Power of Tomorrow</a>
-                            </div>
-                            <div class="blog-content bg-light p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 small"><i class="fa fa-calendar me-2"></i> April 2,2025</p>
-                                    <p class="mb-0 small"><i class="fa fa-tag me-2"></i> Electricity Corner</p>
-                                </div>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis rem distinctio tempora eum quam eligendi. Repudiandae voluptas voluptatibus quo itaque!
-                                </p>
-                                <a class="btn btn-primary py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
+
+       {{--  Start Blog Area   --}}
+    <section class="blog section" id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Keep up with Our Most Recent Medical News.</h2>
+                        <img src="{{ asset('frontend/1/img/section-img.png') }}" alt="#">
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
                     </div>
                 </div>
             </div>
-         </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Single Blog -->
+                    <div class="single-news">
+                        <div class="news-head">
+                            <img src="{{ asset('frontend/1/img/blog1.jpg') }}" alt="#">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-content">
+                                <div class="date">22 Aug, 2020</div>
+                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
+                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Blog -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Single Blog -->
+                    <div class="single-news">
+                        <div class="news-head">
+                            <img src="{{ asset('frontend/1/img/blog2.jpg') }}" alt="#">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-content">
+                                <div class="date">15 Jul, 2020</div>
+                                <h2><a href="blog-single.html">Top five way for solving teeth problems.</a></h2>
+                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
+                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Blog -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Single Blog -->
+                    <div class="single-news">
+                        <div class="news-head">
+                            <img src="{{ asset('frontend/1/img/blog3.jpg') }}" alt="#">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-content">
+                                <div class="date">05 Jan, 2020</div>
+                                <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
+                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
+                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Blog -->
+                </div>
+            </div>
+        </div>
+    </section>
+     {{--  End Blog Area  --}}
+
  @endsection
+

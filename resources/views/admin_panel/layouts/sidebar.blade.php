@@ -128,7 +128,7 @@
                 <li class="nav-header">Dashboard Settings</li>
 
                 <li class="nav-item">
-                    <a href="/mem" class="nav-link">
+                    <a href="/settings" class="nav-link">
                         <span class="material-icons-round"> settings </span>
                         <p>
 
