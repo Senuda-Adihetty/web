@@ -192,7 +192,7 @@
 
                     <div class="card-body">
 
-                        <table class="table table-bordered table-striped table-hover" id="example">
+                        <table class="table table-bordered table-striped table-hover" id="slide">
                             <thead>
                                 <tr>
 
@@ -453,7 +453,7 @@
     @push('scripts')
         <script>
             $(document).ready(function() {
-                $('#example').DataTable({
+                $('#slide').DataTable({
                     pageLength: 5,
                     lengthMenu: [
                         [5, 10, 25, 50, 100],

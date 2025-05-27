@@ -56,6 +56,15 @@
     <link rel="stylesheet" href="{{ asset('frontend/1/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/1/css/responsive.css') }}">
 
+    <style>
+        .pagination {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+
 </head>
 
 <body>

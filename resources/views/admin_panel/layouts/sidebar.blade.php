@@ -120,6 +120,15 @@
                                 </p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="/blogIndex" class="nav-link">
+                                <i class="nav-icon bi bi-box-arrow-in-right"></i>
+                                <p>
+                                    Blogs
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

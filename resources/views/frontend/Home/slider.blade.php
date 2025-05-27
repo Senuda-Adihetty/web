@@ -11,14 +11,15 @@
                              <span>
                                 {{ $slider->first_headingBlue }}
                             </span>
-                            
+
                          {{ $slider->second_headingBlack }}
                          <span>
                             {{ $slider->second_headingBlue }}
                         </span>
                         </h1>
 
-                        <p> {{ $slider->mini_para }} </p>
+                        <p class="news-text text-justify" style="word-wrap: break-word; white-space: pre-line;"> {{ $slider->mini_para }} </p>
+
                         <div class="button">
                             <a href=" {{ $slider->more_infoLink }}" class="btn">Get Appointment</a>
                             <a href=" {{ $slider->more_infoLink }}" class="btn primary">Learn More</a>
