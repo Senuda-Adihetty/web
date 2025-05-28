@@ -1,7 +1,6 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-
     <!-- Slider Area -->
     <section class="slider">
 
@@ -198,7 +197,7 @@
     <!--/ End Fun-facts -->
 
     <!-- Start Why choose -->
-    <section class="why-choose section">
+    {{--  <section class="why-choose section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -257,7 +256,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>  --}}
     <!--/ End Why choose -->
 
     <!-- Start Call to action -->
@@ -301,36 +300,255 @@
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel portfolio-slider">
                         <div class="single-pf">
-                            <img src="{{ asset('frontend/1/img/pf1.jpg') }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+
                         </div>
                         <div class="single-pf">
-                            <img src="{{ asset('frontend/1/img/pf2.jpg') }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+
+                        </div>
+
+                        <div class="single-pf">
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+
+                        </div>
+
+                        <div class="single-pf">
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+
                         </div>
                         <div class="single-pf">
-                            <img src="{{ asset('frontend/1/img/pf3.jpg') }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+
                         </div>
                         <div class="single-pf">
-                            <img src="{{ asset('frontend/1/img/pf4.jpg') }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+
                         </div>
                         <div class="single-pf">
-                            <img src="{{ 'frontend/1/img/pf1.jpg' }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+
                         </div>
                         <div class="single-pf">
-                            <img src="{{ 'frontend/1/img/pf2.jpg' }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="{{ 'frontend/1/img/pf3.jpg' }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
-                        </div>
-                        <div class="single-pf">
-                            <img src="{{ 'frontend/1/img/pf4.jpg' }}" alt="#">
-                            <a href="portfolio-details.html" class="btn">View Details</a>
+
+                                <div class="single_team"
+                                    style="border-radius: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);">
+                                    <div class="team_thumb">
+                                        <img src="{{ asset('frontend/1/img/team-1.jpg') }}" alt="">
+                                        <div class="team_hover">
+                                            <div class="hover_inner text-center">
+                                                <ul>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="team_title text-center">
+                                        <h3>Jessica Mino</h3>
+                                        <p>Woman Trainer</p>
+                                        <br>
+                                        <p style="padding-left: 4px; padding-right: 4px;">All our trainers are qualified
+                                            instructors with a passion for fitness</P>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -530,71 +748,59 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Keep up with Our Most Recent Medical News.</h2>
-                        <img src="{{ asset('frontend/1/img/section-img.png') }}" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                        <h2>Keep up with Our Most Recent Fitness News.</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Blog -->
-                    <div class="single-news">
-                        <div class="news-head">
-                            <img src="{{ asset('frontend/1/img/blog1.jpg') }}" alt="#">
-                        </div>
-                        <div class="news-body">
-                            <div class="news-content">
-                                <div class="date">22 Aug, 2020</div>
-                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                @foreach ($blogs as $blog)
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <!-- Single Blog -->
+                        <div class="single-news">
+                            <div class="news-head">
+                                <img src="{{ asset('storage/' . $blog->image) }}" alt="#">
+                            </div>
+                            <div class="news-body">
+                                <div class="news-content">
+                                    <span><i class="fa fa-clock-o"></i>
+                                        {{ $blog->created_at->format('F j, Y') }}
+                                    </span>
+
+                                    <h2>
+                                        <a href="blog-single.html">
+                                            {{ $blog->title }}
+                                        </a>
+                                    </h2>
+
+                                    <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        {{ Str::limit($blog->body, 50) }}
+                                    </p>
+                                    <br>
+                                    <div class="text-center">
+                                        <a class="date" href="/blog/{{ $blog->slug }}">
+                                            see More
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!-- End Single Blog -->
                     </div>
-                    <!-- End Single Blog -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Blog -->
-                    <div class="single-news">
-                        <div class="news-head">
-                            <img src="{{ asset('frontend/1/img/blog2.jpg') }}" alt="#">
-                        </div>
-                        <div class="news-body">
-                            <div class="news-content">
-                                <div class="date">15 Jul, 2020</div>
-                                <h2><a href="blog-single.html">Top five way for solving teeth problems.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Blog -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single Blog -->
-                    <div class="single-news">
-                        <div class="news-head">
-                            <img src="{{ asset('frontend/1/img/blog3.jpg') }}" alt="#">
-                        </div>
-                        <div class="news-body">
-                            <div class="news-content">
-                                <div class="date">05 Jan, 2020</div>
-                                <h2><a href="blog-single.html">We provide highly business soliutions.</a></h2>
-                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt sed do incididunt sed.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Blog -->
-                </div>
+                @endforeach
+            </div>
+            <br>
+            <br>
+            <div class="text-center">
+                <a href="/blogs" class="text-primary">----- See All Blogs -----</a>
             </div>
         </div>
     </section>
+
+
     <!-- End Blog Area -->
 
     <!-- Start clients -->
-    <div class="clients overlay">
+    {{--  <div class="clients overlay">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-12">
@@ -630,7 +836,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  --}}
     <!--/Ens clients -->
 
     <!-- Start Appointment -->
@@ -755,5 +961,4 @@
         </div>
     </section>
     <!-- /End Newsletter Area -->
-
 @endsection

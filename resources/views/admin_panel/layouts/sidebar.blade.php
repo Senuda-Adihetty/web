@@ -132,7 +132,43 @@
                     </ul>
                 </li>
 
+  <li class="nav-item">
+                    <a href="#" class="nav-link" data-bs-target="#userRoleManage" aria-expanded="false" aria-controls="userRoleManage">
+                        <i class="nav-icon bi bi-house-fill"></i>
+                        <p>
+                            User Role Management
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" id="userRoleManage">
+                        <li class="nav-item">
+                            <a href="/userIndex" class="nav-link">
+                                <span class="material-icons-round"> draw </span>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
 
+                        </li>
+                        <li class="nav-item">
+                            <a href="/roleIndex" class="nav-link">
+                                <i class="nav-icon bi bi-box-arrow-in-right"></i>
+                                <p>
+                                    Roles
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/permissionIndex" class="nav-link">
+                                <i class="nav-icon bi bi-box-arrow-in-right"></i>
+                                <p>
+                                    Permissions
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li class="nav-header">Dashboard Settings</li>
 

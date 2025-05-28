@@ -8,11 +8,11 @@
              <div class="bread-inner">
                  <div class="row">
                      <div class="col-12">
-                         <h2>Our Trainers</h2>
+                         <h2>Gym Gallery</h2>
                          <ul class="bread-list">
                              <li><a href="/">Home</a></li>
                              <li><i class="icofont-simple-right"></i></li>
-                             <li class="active">Trainers</li>
+                             <li class="active">Gallery</li>
                          </ul>
                      </div>
                  </div>

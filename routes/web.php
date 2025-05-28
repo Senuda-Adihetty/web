@@ -12,7 +12,8 @@ use App\Models\slider;
 use App\Models\anousementModel;
 use App\Models\settings;
 use App\Models\blogs;
-
+use App\Http\Middleware\TimeRestrictedAccess;
+use Ramsey\Uuid\Type\Time;
 
 Route::get('/', function () {
 
@@ -20,7 +21,8 @@ Route::get('/', function () {
 
     $sliders = slider::all();
     $anousements = anousementModel::all();
-    return view('frontend.Home', compact('sliders', 'anousements', 'setting'));
+    $blogs = blogs::orderBy('created_at', 'desc')->paginate(3);
+    return view('frontend.Home', compact('sliders', 'anousements', 'setting', 'blogs'));
 });
 
 
@@ -38,11 +40,10 @@ Route::get('/blogs', function () {
 });
 
 Route::get('/blog/{slug}', function ($slug) {
-     $setting = Settings::all()->pluck('value', 'key')->toArray();
+    $setting = Settings::all()->pluck('value', 'key')->toArray();
     $blog = blogs::where('slug', $slug)->first();
-    return view('frontend.blogSingle',compact('blog', 'setting'));
+    return view('frontend.blogSingle', compact('blog', 'setting'));
 });
-
 
 
 
@@ -57,11 +58,12 @@ Route::get('/about', function () {
     return view('frontend.about', compact('setting'));
 });
 
-Route::get('/trainers', function () {
-$setting = Settings::all()->pluck('value', 'key')->toArray();
-    return view('frontend.trainers' , compact('setting'));
-});
 
+// Protect TimeRestricted, Rout
+Route::get('/gallery', function () {
+    $setting = Settings::all()->pluck('value', 'key')->toArray();
+    return view('frontend.gallery', compact('setting'));
+})->middleware([TimeRestrictedAccess::class]);
 
 
 Route::get('/dashboard', function () {

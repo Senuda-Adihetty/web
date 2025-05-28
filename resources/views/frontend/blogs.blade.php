@@ -37,7 +37,6 @@
              <div class="row">
 
                  @foreach ($blogs as $blog)
-
                      <div class="col-lg-4 col-md-6 col-12">
                          <!-- Single Blog -->
                          <div class="single-news">
@@ -46,9 +45,10 @@
                              </div>
                              <div class="news-body">
                                  <div class="news-content">
-                                     <div class="date">
-                                         {{ $blog->created_at->format('F j, Y') }}
-                                     </div>
+
+                                     <span><i class="fa fa-clock-o"></i>
+                                     {{ $blog->created_at->format('F j, Y') }}
+                                    </span>
 
                                      <h2>
                                          <a href="blog-single.html">
@@ -61,10 +61,10 @@
                                      </p>
                                      <br>
                                      <div class="text-center">
-                                     <a href="/blog/{{ $blog->slug }}">
-                                         see More
-                                     </a>
-</div>
+                                         <a class="date" href="/blog/{{ $blog->slug }}">
+                                             see More
+                                         </a>
+                                     </div>
                                  </div>
                              </div>
                          </div>
@@ -73,12 +73,12 @@
                  @endforeach
              </div>
 
-<div class="d-flex justify-content-center">
-    {{ $blogs->links('pagination::bootstrap-5') }}
-</div>
+             <div class="d-flex justify-content-center">
+                 {{ $blogs->links('pagination::bootstrap-5') }}
+             </div>
 
          </div>
-        </div>
+         </div>
      </section>
 
 

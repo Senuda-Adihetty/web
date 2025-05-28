@@ -68,7 +68,7 @@
                              <nav class="navigation">
                                  <ul class="nav menu">
                                      <li><a href="/"> Home </a></li>
-                                     <li><a href="/trainers"> Trainers </a></li>
+                                     <li><a href="/gallery"> Gallery </a></li>
                                      <li><a href="/about"> About </a></li>
                                      <li><a href="/packages"> Packages </a></li>
                                      <li><a href="/blogs"> Blogs </a></li>
