@@ -58,29 +58,42 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
-                            Add New Role
+                            Add New User
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
 
-                    <form method="POST" action="/saveRole" enctype="multipart/form-data">
+                    <form method="POST" action="/saveUser" enctype="multipart/form-data">
                         @csrf
 
                         <div class="modal-body">
 
                             {{--  Name Part  --}}
                             <div class="mb-3">
-                                <label for="role_name" class="form-label">
-                                    Role Name
+                                <label for="user_name" class="form-label">
+                                    User Name
                                 </label>
-                                <input type="text" class="form-control" name="role_name" id="role_name">
+                                <input type="text" class="form-control" name="user_name" id="user_name">
                             </div>
 
+                            <div class="mb-3">
+                                <label for="user_email" class="form-label">
+                                    User Email
+                                </label>
+                                <input type="text" class="form-control" name="user_email" id="user_email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="user_password" class="form-label">
+                                    User Password
+                                </label>
+                                <input type="text" class="form-control" name="user_password" id="user_password">
+                            </div>
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Add Permission</button>
+                                <button type="submit" class="btn btn-primary">Add User</button>
                             </div>
 
                         </div>
@@ -98,12 +111,12 @@
                 {{--  begin::Row  --}}
                 <div class="row">
                     <div class="col-sm-8">
-                        <h3 class="mb-0">Role Custom Area</h3>
+                        <h3 class="mb-0">User Custom Area</h3>
                     </div>
                     <div class="col-sm-4">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Role</li>
+                            <li class="breadcrumb-item active" aria-current="page">Users</li>
                         </ol>
                     </div>
                 </div>
@@ -126,7 +139,7 @@
                         </div>
                         {{--  end minimize and close tools  --}}
 
-                        <h3 class="card-title">Available Roles</h3>
+                        <h3 class="card-title">All Users</h3>
                     </div>
 
                     {{--  begin::Card Body  --}}
@@ -136,7 +149,10 @@
                                 <tr>
 
                                     <th style="width: 10px">Id</th>
-                                    <th>RoleName</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+
+                                    <th>Profile Image</th>
                                     <th>Actons</th>
 
                                 </tr>
@@ -144,78 +160,29 @@
 
                             <tbody>
 
-                                @foreach ($roles as $role)
+                                @foreach ($users as $user)
                                     <tr class="align-middle">
 
                                         <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $role->id }}
+                                            {{ $user->id }}
                                         </td>
 
                                         <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $role->name }}
+                                            {{ $user->name }}
+                                        </td>
+
+                                        <td class="text-wrap" style="white-space: normal; max-width: 250px;">
+                                            {{ $user->email }}
+                                        </td>
+
+                                        <td>
+                                            <img width="100" src="{{ asset('storage/' . $user->image) }}"
+                                                alt="">
                                         </td>
 
                                         <td>
 
-                                            {{--  Button trigger modal  --}}
-                                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#rolemodal{{ $role->id }}">
-                                                Edit
-                                            </button>
-
-                                            {{--  begin Modal for edit Button  --}}
-                                            <div class="modal fade" id="rolemodal{{ $role->id }}" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog card card-info card-outline mb-0">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">
-                                                                Edit Role
-                                                            </h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-
-
-                                                        <form method="POST" action="/roleUpdate"
-                                                            enctype="multipart/form-data">
-                                                            @csrf
-
-                                                            <input type="hidden" name="role_id"
-                                                                value="{{ $role->id }}">
-
-                                                            <div class="modal-body">
-
-                                                                {{--  Name Part  --}}
-                                                                <div class="mb-3">
-                                                                    <label for="role_name" class="form-label">
-                                                                        Name
-                                                                    </label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="role_name" id="role_name"
-                                                                        value="{{ $role->name }}">
-                                                                </div>
-
-
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <button type="submit" class="btn btn-primary">Update
-                                                                        Role</button>
-                                                                </div>
-
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {{--  end Modal for edit Button --}}
-
-
-                                            <a href="/permissionToRole/{{ $role->id }}" class="btn btn-primary">Add
-                                                Permission to Role</a>
-
-                                            <a href="{{ route('role.delete', $role->id) }}"
+                                            <a href="{{ route('user.delete', $user->id) }}"
                                                 onclick="return confirm('Are you sure you want to delete this slide?')"
                                                 class="btn btn-danger">
                                                 Delete
@@ -227,7 +194,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                         {{--  end table  --}}
+                        {{--  end table  --}}
                     </div>
                     {{--  end::Card Body  --}}
                 </div>

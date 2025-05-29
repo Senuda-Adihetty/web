@@ -6,6 +6,8 @@ use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\admin\blogController;
 use App\Http\Controllers\admin\PermissionsController;
 use App\Http\Controllers\admin\RoleController;
+use App\Http\Controllers\admin\permissionUserController;
+use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\main\packageContoller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\settingsController as ControllersSettingsController;
@@ -112,26 +114,33 @@ Route::controller(blogController::class)->middleware(['auth', 'verified'])->grou
 // back end Routes
 
 
- Route::controller(PermissionsController::class)->middleware(['auth','verified'])->group(function (){
+Route::controller(PermissionsController::class)->middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/permissionIndex','index');
-    Route::post('/savePermission','storepermission')->name('permission.store');
-    Route::post('/permissionUpdate','updatepermission')->name('permission.update');
-    Route::get('/deletePermission/{id}','deletepermission')->middleware(['role:super-admin'])->name('permission.delete');
+    Route::get('/permissionIndex', 'index');
+    Route::post('/savePermission', 'storepermission')->name('permission.store');
+    Route::post('/permissionUpdate', 'updatepermission')->name('permission.update');
+    Route::get('/deletePermission/{id}', 'deletepermission')->middleware(['role:super-admin'])->name('permission.delete');
+});
+
+Route::controller(RoleController::class)->middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/roleIndex', 'index');
+    Route::post('/saveRole', 'storerole')->name('role.store');
+    Route::post('/roleUpdate', 'updaterole')->name('role.update');
+    Route::get('/deleteRole/{id}', 'deleterole')->middleware(['role:super-admin'])->name('role.delete');
+
+    Route::get('/permissionToRole/{id}', 'givePermissionToRole')->name('role.givePermissionToRole');
+    Route::put('/givePermissionToRole/{id}', 'giveRoleToPermission')->name('role.giveRoleToPermission');
+});
+
+
+Route::controller(permissionUserController::class)->middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/userIndex','index');
+    Route::post('/saveUser','storeuser')->name('user.store');
+    Route::post('/userUpdate','updateuser')->name('user.update');
+    Route::get('/deleteUser/{id}','deleteuser')->middleware(['role:super-admin'])->name('user.delete');
  });
-
- Route::controller(RoleController::class)->middleware(['auth','verified'])->group(function (){
-
-    Route::get('/roleIndex','index');
-    Route::post('/saveRole','storerole')->name('role.store');
-    Route::post('/roleUpdate','updaterole')->name('role.update');
-    Route::get('/deleteRole/{id}','deleterole')->middleware(['role:super-admin'])->name('role.delete');
-
-    Route::get('/permissionToRole/{id}','givePermissionToRole')->name('role.givePermissionToRole');
-    Route::put('/givePermissionToRole/{id}','giveRoleToPermission')->name('role.giveRoleToPermission');
- });
-
-
 
 
 require __DIR__ . '/auth.php';

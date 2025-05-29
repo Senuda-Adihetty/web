@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\DB;
 
 class roleController extends Controller
 {
@@ -39,10 +40,36 @@ class roleController extends Controller
         return redirect()->back()->with('success', 'Role updated successfully! ');
     }
 
-    public function deleteRole($id)
+    public function deleterole($id)
     {
-        $rolecc = Role::find($id);
-        $rolecc ->delete();
+        $role = Role::find($id);
+        $role->delete();
         return redirect()->back()->with('success', 'Role deleted successfully! ');
     }
+
+    public function givePermissionToRole($id)
+    {
+        $permissions = Permission::all();
+       $role = Role::findOrFail($id);
+
+       $rolePermissions = DB::table("role_has_permissions")->where("role_has_permissions.role_id",$id)
+       ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')->all();
+
+
+       return view('admin_panel.User_Manage.givePermissionToRole',compact('permissions','role','rolePermissions'));
+    }
+
+    public function giveRoleToPermission(Request $request,$role_id){
+        $request->validate([
+            'permissions' => 'required',
+
+        ]);
+        $role = Role::findOrFail($role_id);
+        $role->syncPermissions($request->permissions);
+
+        return redirect()->back()->with('success','Permission added successfully! ');
+
+    }
+
+    
 }
