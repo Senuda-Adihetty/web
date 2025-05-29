@@ -154,9 +154,7 @@
 
                         <h3 class="card-title">Available Anousements</h3>
                     </div>
-                    {{--  <div class="card-header">
-                        h
-                    </div>  --}}
+                    
 
                     <div class="card-body">
 
@@ -295,6 +293,7 @@
 
                     </tbody>
                     </table>
+                    {{--  end table  --}}
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
@@ -307,7 +306,7 @@
                     </ul>
                 </div>
             </div>
-            {{--  end table  --}}
+
 
 
 
