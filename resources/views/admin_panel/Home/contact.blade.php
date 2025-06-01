@@ -36,110 +36,29 @@
                         {{-- End Error Massege  --}}
                     </div>
 
-
-                    <div class="col-md-6 text-end">
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            Add New User
-                        </button>
-
-                    </div>
                 </div>
             </div>
             <!--end::Container-->
         </div>
         <!--end::App Content Bottom Area-->
 
-        {{--  begin Modal  --}}
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog card card-info card-outline mb-0">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            Add New User
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-
-                    <form method="POST" action="/saveUser" enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="modal-body">
-
-                            {{--  Name Part  --}}
-                            <div class="mb-3">
-                                <label for="name" class="form-label">
-                                    User Name
-                                </label>
-                                <input type="text" class="form-control" name="name" id="name">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="email" class="form-label">
-                                    User Email
-                                </label>
-                                <input type="text" class="form-control" name="email" id="email">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="password" class="form-label">
-                                    User Password
-                                </label>
-                                <input type="text" class="form-control" name="password" id="password">
-                            </div>
-
-                            {{--  Roles  --}}
-                            <div class="mb-3">
-                                <label for="user_roles" class="form-label">User Roles</label>
-                                <select class="form-control" name="roles[]">
-                                    <option value="">Select Role</option>
-                                    @foreach ($roles as $role)
-                                        <option value="{{ $role }}">{{ $role }}</option>
-                                    @endforeach
-                                </select>
-
-                            </div>
-
-
-                            <div class="modal-footer">
-                                <span>
-                                    For security reasons, you cannot edit the users you create here. Therefore, if such a
-                                    situation arises, delete the user and create it again as needed.
-                                </span>
-                                
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Add User</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        {{--  end Modal  --}}
-
-
-        {{--  begin::App Content Header  --}}
+        <!--begin::App Content Header-->
         <div class="app-content-header">
-            {{--  begin::Container  --}}
+            <!--begin::Container-->
             <div class="container-fluid">
-                {{--  begin::Row  --}}
+                <!--begin::Row-->
                 <div class="row">
                     <div class="col-sm-8">
-                        <h3 class="mb-0">User Custom Area</h3>
+                        <h3 class="mb-0">Masseges Custom Area</h3>
                     </div>
                     <div class="col-sm-4">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Users</li>
+                            <li class="breadcrumb-item active" aria-current="page">Masseges</li>
                         </ol>
                     </div>
                 </div>
-                {{--  end::Row  --}}
-
+                <!--end::Row-->
 
                 {{--  begin table  --}}
                 <div class="card mb-4">
@@ -157,21 +76,23 @@
                         </div>
                         {{--  end minimize and close tools  --}}
 
-                        <h3 class="card-title">All Users</h3>
+                        <h3 class="card-title">Available Masseges</h3>
                     </div>
 
                     {{--  begin::Card Body  --}}
                     <div class="card-body">
-                        <table class="table table-bordered table-striped table-hover" id="userPermission">
+                        <table class="table table-bordered table-striped table-hover" id="massege">
                             {{--  begin table header  --}}
                             <thead>
                                 <tr>
 
                                     <th style="width: 10px">Id</th>
                                     <th>Name</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
                                     <th>Email</th>
-                                    <th>Profile Image</th>
-                                    <th>Role</th>
+                                    <th>Phone</th>
+                                    <th>Created At</th>
                                     <th>Actons</th>
 
                                 </tr>
@@ -179,33 +100,39 @@
 
                             <tbody>
 
-                                @foreach ($users as $user)
+                                @foreach ($contacts as $contact)
                                     <tr class="align-middle">
 
                                         <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $user->id }}
+                                            {{ $contact->id }}
                                         </td>
 
                                         <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $user->name }}
+                                            {{ $contact->sender_name }}
                                         </td>
 
                                         <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $user->email }}
+                                            {{ $contact->sender_subject }}
                                         </td>
 
-                                        <td>
-                                            <img width="100" src="{{ asset('storage/' . $user->image) }}"
-                                                alt="">
+                                        <td class="text-wrap" style="white-space: normal; max-width: 250px;">
+                                            {{ $contact->sender_message }}
                                         </td>
-                                        <td>
-                                            @foreach ($user->roles as $role)
-                                                {{ $role->name }}
-                                            @endforeach
+                                        <td class="text-wrap" style="white-space: normal; max-width: 250px;">
+                                            {{ $contact->sender_email }}
                                         </td>
+                                        <td class="text-wrap" style="white-space: normal; max-width: 250px;">
+                                            {{ $contact->sender_phone }}
+                                        </td>
+
+                                        <td class="text-wrap" style="white-space: normal; max-width: 250px;">
+                                            {{ $contact->created_at }}
+                                        </td>
+
+
                                         <td>
 
-                                            <a href="{{ route('user.delete', $user->id) }}"
+                                            <a href="{{ route('contact.delete', $contact->id) }}"
                                                 onclick="return confirm('Are you sure you want to delete this slide?')"
                                                 class="btn btn-danger">
                                                 Delete
@@ -228,10 +155,10 @@
 
     @endsection
 
-    @push('scripts')
+       @push('scripts')
         <script>
             $(document).ready(function() {
-                $('#userPermission').DataTable({
+                $('#massege').DataTable({
                     pageLength: 5,
                     lengthMenu: [
                         [5, 10, 25, 50, 100],

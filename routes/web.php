@@ -7,17 +7,16 @@ use App\Http\Controllers\admin\blogController;
 use App\Http\Controllers\admin\PermissionsController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\permissionUserController;
-use App\Http\Controllers\admin\UserController;
-use App\Http\Controllers\main\packageContoller;
+use App\Http\Controllers\admin\contactController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\settingsController as ControllersSettingsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\slider;
 use App\Models\anousementModel;
 use App\Models\settings;
 use App\Models\blogs;
 use App\Http\Middleware\TimeRestrictedAccess;
-use Ramsey\Uuid\Type\Time;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
 
@@ -52,8 +51,15 @@ Route::get('/blog/{slug}', function ($slug) {
 
 
 Route::get('/contact', function () {
+    $setting = Settings::all()->pluck('value', 'key')->toArray();
+    return view('frontend.contact',  compact('setting'));
+});
 
-    return view('frontend.contact');
+Route::controller(contactController::class)->group(function () {
+
+    Route::get('/adminContact', 'index')->middleware(['role:super-admin'])->name('contact');
+    Route::post('/contactSave', 'store')->name('contact.store');
+    Route::get('/contact/{id}/delete', 'destroy')->middleware(['role:super-admin'])->name('contact.delete');
 });
 
 Route::get('/about', function () {
@@ -73,6 +79,8 @@ Route::get('/gallery', function () {
 Route::get('/dashboard', function () {
     return view('admin_panel.dashboard'); // I  edit this line
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {                             // I  edit this line
     Route::get('/profile', [ProfileController::class, 'edit'])->name('admin_panel.Profile.profile');
@@ -116,7 +124,7 @@ Route::controller(blogController::class)->middleware(['auth', 'verified'])->grou
 
 Route::controller(PermissionsController::class)->middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/permissionIndex', 'index');
+    Route::get('/permissionIndex', 'index')->name('permission.index');;
     Route::post('/savePermission', 'storepermission')->name('permission.store');
     Route::post('/permissionUpdate', 'updatepermission')->name('permission.update');
     Route::get('/deletePermission/{id}', 'deletepermission')->middleware(['role:super-admin'])->name('permission.delete');
@@ -124,7 +132,7 @@ Route::controller(PermissionsController::class)->middleware(['auth', 'verified']
 
 Route::controller(RoleController::class)->middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('/roleIndex', 'index');
+    Route::get('/roleIndex', 'index')->name('role.index');;
     Route::post('/saveRole', 'storerole')->name('role.store');
     Route::post('/roleUpdate', 'updaterole')->name('role.update');
     Route::get('/deleteRole/{id}', 'deleterole')->middleware(['role:super-admin'])->name('role.delete');
@@ -134,13 +142,14 @@ Route::controller(RoleController::class)->middleware(['auth', 'verified'])->grou
 });
 
 
-Route::controller(permissionUserController::class)->middleware(['auth', 'verified'])->group(function () {
+Route::controller(permissionUserController::class)->middleware(['auth', 'verified', 'role:super-admin|Core-Admin'])->group(function () {
 
-    Route::get('/userIndex','index');
-    Route::post('/saveUser','storeuser')->name('user.store');
-    Route::post('/userUpdate','updateuser')->name('user.update');
-    Route::get('/deleteUser/{id}','deleteuser')->middleware(['role:super-admin'])->name('user.delete');
- });
+    Route::get('/userIndex', 'index')->name('user.index');;
+    Route::post('/saveUser', 'storeuser')->name('user.store');
+    Route::post('/userUpdate', 'updateuser')->name('user.update');
+    Route::get('/deleteUser/{id}', 'deleteuser')->middleware(['role:super-admin'])->name('user.delete');
+});
+
 
 
 require __DIR__ . '/auth.php';

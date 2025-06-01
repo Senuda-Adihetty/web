@@ -131,7 +131,8 @@
 
                     {{--  begin::Card Body  --}}
                     <div class="card-body">
-                        <table class="table table-bordered table-striped table-hover" id="blog">
+                        <table class="table table-bordered table-striped table-hover" id="role">
+                            {{--  begin table header  --}}
                             <thead>
                                 <tr>
 
@@ -237,3 +238,17 @@
         {{--  end::App Content Header  --}}
 
     @endsection
+
+       @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $('#role').DataTable({
+                    pageLength: 5,
+                    lengthMenu: [
+                        [5, 10, 25, 50, 100],
+                        [5, 10, 25, 50, 100]
+                    ]
+                });
+            });
+        </script>
+    @endpush

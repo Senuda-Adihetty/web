@@ -12,17 +12,19 @@ class permissionUserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return view('admin_panel.User_Manage.userPermission', compact('users'));
+        $users = User::whereHas('roles')->with('roles')->get();
+        $roles = Role::pluck('name', 'name')->all();
+
+        return view('admin_panel.User_Manage.userPermission', compact('users', 'roles'));
     }
 
     public function storeuser(Request $request)
     {
 
         $request->validate([
-            'user_name' => 'required',
-            'user_email' => 'required',
-            'user_password' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
             'image' => ['image', 'mimes:jpeg,png,jpg,gif,webp,bmp,svg,tiff,ico', 'max:92160'],
         ]);
 
@@ -32,8 +34,8 @@ class permissionUserController extends Controller
         }
 
         $user = User::create([
-            'name' => $request->user_name,
-            'email' => $request->user_email,
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
             'image' => $imagepath,
         ]);
@@ -44,4 +46,12 @@ class permissionUserController extends Controller
         return redirect()->back()->with('success', 'User added successfully! ');
     }
 
+
+
+    public function deleteuser($id)
+    {
+        $delete = User::find($id);
+        $delete->delete();
+        return redirect()->back()->with('success', 'User deleted successfully! ');
+    }
 }
