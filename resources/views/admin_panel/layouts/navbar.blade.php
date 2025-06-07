@@ -51,32 +51,28 @@
                             alt="User Image" />
                         <p>
                             {{ Auth::user()->name }}
-                            <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
+                            <small>{{ Auth::user()->email }}</small>
+
+
                         </p>
                     </li>
                     {{--  end::User Image  --}}
 
                     {{--  begin::Menu Body  --}}
-                    <li class="user-body">
-
+                    <li class="user-body text-center">
+                        <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
                     </li>
                     {{--  end::Menu Body  --}}
 
 
 
                     {{--  begin::Menu Footer  --}}
-                    <li class="user-footer">
-                        <a href="/profile" class="btn btn-default btn-flat">Profile</a>
-
-                        {{--  Authentication (LOGOUT)  --}}
-                        <form method="POST" action="{{ route('logout') }}">
+                    <li class="user-footer d-flex justify-content-between">
+                        <a href="/profile" class="btn btn-default btn-flat flex-fill me-2">Profile</a>
+                        <form method="POST" action="{{ route('logout') }}" class="m-0 p-0">
                             @csrf
-
-                            <button type="submit" class="dropdown-item">Sign out</button>
+                            <button type="submit" class="btn btn-default btn-flat flex-fill">Sign out</button>
                         </form>
-
-
-
                     </li>
 
                     {{--  end::Menu Footer  --}}

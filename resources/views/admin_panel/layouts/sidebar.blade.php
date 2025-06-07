@@ -35,14 +35,14 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="/memberIndex" class="nav-link">
                         <span class="material-icons-round"> group </span>
                         <p>Members</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="/trainerIndex" class="nav-link">
                         <span class="material-icons-round"> settings_accessibility </span>
                         <p>Trainers</p>
                     </a>

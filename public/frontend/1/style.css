@@ -1762,7 +1762,7 @@ body{
     display: block;
 }
 
-.team_hover {
+/* .team_hover {
     border-radius: 30px;
     position: absolute;
     top: 0;
@@ -1800,7 +1800,7 @@ body{
 
 .hover_inner ul li a:hover {
     transform: scale(1.2);
-}
+} */
 
 
 

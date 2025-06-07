@@ -8,12 +8,14 @@ use App\Http\Controllers\admin\PermissionsController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\permissionUserController;
 use App\Http\Controllers\admin\contactController;
+use App\Http\Controllers\admin\trainerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\slider;
 use App\Models\anousementModel;
 use App\Models\settings;
 use App\Models\blogs;
+use App\Models\trainer;
 use App\Http\Middleware\TimeRestrictedAccess;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,11 +23,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
 
     $setting = Settings::all()->pluck('value', 'key')->toArray();
-
+    $trainers = trainer::all();
     $sliders = slider::all();
     $anousements = anousementModel::all();
     $blogs = blogs::orderBy('created_at', 'desc')->paginate(3);
-    return view('frontend.Home', compact('sliders', 'anousements', 'setting', 'blogs'));
+    return view('frontend.Home', compact('sliders', 'anousements', 'setting', 'blogs', 'trainers'));
 });
 
 
@@ -77,7 +79,10 @@ Route::get('/gallery', function () {
 
 
 Route::get('/dashboard', function () {
-    return view('admin_panel.dashboard'); // I  edit this line
+    $user = Auth::user();
+    $trainer = Trainer::where('email', $user->email)->first();
+
+    return view('admin_panel.dashboard', compact('trainer'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
@@ -150,6 +155,12 @@ Route::controller(permissionUserController::class)->middleware(['auth', 'verifie
     Route::get('/deleteUser/{id}', 'deleteuser')->middleware(['role:super-admin'])->name('user.delete');
 });
 
+Route::controller(trainerController::class)->middleware(['auth', 'verified'])->group(function () {
 
+    Route::get('/trainerIndex', 'index')->name('trainer.index');
+    Route::post('/saveTrainer', 'storeTrainer')->name('blog.save');
+    Route::post('/trainerUpdate/{id}', 'updateTrainer')->name('trainer.update');
+    Route::get('/deleteTrainer/{id}', 'deleteTrainer')->name('trainers.delete');
+});
 
 require __DIR__ . '/auth.php';
