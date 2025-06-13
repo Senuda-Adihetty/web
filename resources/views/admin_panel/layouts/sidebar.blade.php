@@ -63,7 +63,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="/paymentIndex" class="nav-link">
                         <span class="material-icons-round"> paid </span>
                         <p>Payments</p>
                     </a>
@@ -77,7 +77,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="/packageIndex" class="nav-link">
                         <span class="material-icons-round"> stars </span>
                         <p>Packages</p>
                     </a>
@@ -89,6 +89,8 @@
                         <p>Reports</p>
                     </a>
                 </li>
+
+
 
                 <li class="nav-header">
                     Home Page Settings
@@ -141,8 +143,9 @@
                     </ul>
                 </li>
 
-  <li class="nav-item">
-                    <a href="#" class="nav-link" data-bs-target="#userRoleManage" aria-expanded="false" aria-controls="userRoleManage">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-bs-target="#userRoleManage" aria-expanded="false"
+                        aria-controls="userRoleManage">
                         <i class="nav-icon bi bi-house-fill"></i>
                         <p>
                             User Role Management

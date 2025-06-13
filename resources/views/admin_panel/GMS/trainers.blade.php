@@ -255,6 +255,9 @@
                                                 <strong>Facebook Account:</strong> {{ $trainer->fb }}<br>
                                                 <strong>Instagram Account:</strong> {{ $trainer->insta }}<br>
 
+                                            </p>
+                                        </td>
+
                                         <td class="text-center">
                                             <img src="{{ asset('storage/' . $trainer->photo) }}" alt="image"
                                                 height="400">
@@ -286,8 +289,8 @@
                                                             enctype="multipart/form-data">
                                                             @csrf
 
-                                                            {{--  <input type="hidden" name="id"
-                                                                value="{{ $trainer->id }}">  --}}
+                                                            <input type="hidden" name="id"
+                                                                value="{{ $trainer->id }}">
 
                                                             <div class="modal-body">
 
@@ -328,7 +331,8 @@
                                                                     <input type="text" class="form-control"
                                                                         name="email" id="email"
                                                                         value="{{ $trainer->email }}" readonly>
-                                                                        <small> * email unique FOR ATHENICATION this website</small>
+                                                                    <small> * email unique FOR ATHENICATION this
+                                                                        website</small>
                                                                 </div>
 
                                                                 <div class="mb-3">
@@ -382,7 +386,7 @@
                                                                 </div>
 
                                                                 <div class="row">
-                                                                    {{-- Current Blog Photo --}}
+                                                                    {{-- Current Trainer Photo --}}
                                                                     @if ($trainer->photo)
                                                                         <div class="col-md-6 mb-3">
                                                                             <label class="form-label">
@@ -399,8 +403,8 @@
                                                                     <div class="col-md-6 mb-3">
                                                                         <label class="form-label">Preview New
                                                                             Image</label><br>
-                                                                        <img id="imagePreview2" src="#"
-                                                                            alt="Image Preview2"
+                                                                        <img id="imagePreview2{{ $trainer->id }}"
+                                                                            src="#" alt="Image Preview2"
                                                                             style="display: none; margin-top: 10px; max-width: 200px;">
                                                                     </div>
 
@@ -413,7 +417,8 @@
                                                                     </label>
                                                                     <input type="file" name="photo"
                                                                         class="form-control"
-                                                                        onchange="previewImage2(event)" id="photo">
+                                                                        onchange="previewImage2(event, {{ $trainer->id }})"
+                                                                        id="photo">
                                                                 </div>
 
                                                                 <div class="mb-3">
@@ -493,10 +498,10 @@
                 reader.readAsDataURL(event.target.files[0]);
             }
 
-            function previewImage2(event) {
+            function previewImage2(event, id) {
                 const reader = new FileReader();
                 reader.onload = function() {
-                    const output = document.getElementById('imagePreview2');
+                    const output = document.getElementById('imagePreview2' + id);
                     output.src = reader.result;
                     output.style.display = 'block';
                 };

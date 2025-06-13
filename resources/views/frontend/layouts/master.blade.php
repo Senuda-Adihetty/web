@@ -369,9 +369,35 @@
         }
     </script>
 
-<script>
-    $(document).ready(function() {
-        $("#news-slider").owlCarousel({
+    <script>
+        $(document).ready(function() {
+            $("#trainer-slider").owlCarousel({
+                loop: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                nav: true,
+                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+
+   <script>
+    $(document).ready(function () {
+        $("#package-slider").owlCarousel({
             loop: true,
             margin: 30,
             autoplay: true,
@@ -398,4 +424,3 @@
 </body>
 
 </html>
-

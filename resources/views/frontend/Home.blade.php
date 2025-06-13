@@ -288,7 +288,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="news-slider" class="owl-carousel">
+                    <div id="trainer-slider" class="owl-carousel">
 
                         @foreach ($trainers as $trainer)
                             <div class="post-slide">
@@ -296,6 +296,7 @@
                                     <img src="{{ asset('storage/' . $trainer->photo) }}" alt="">
                                     <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
                                 </div>
+
                                 <p> </p>
                                 <div class="post-content" style="text-align: center;">
                                     <h3 class="post-title">
@@ -304,7 +305,8 @@
                                     </h3>
 
                                     <div style="display: flex; gap: 10px; justify-content: center;">
-                                        <a href="mailto:{{ $trainer->email }}"><i class="fa fa-envelope text-primary"></i></a>
+                                        <a href="mailto:{{ $trainer->email }}"><i
+                                                class="fa fa-envelope text-primary"></i></a>
                                         <a href="{{ $trainer->fb }}"><i class="fa fa-facebook text-primary"></i></a>
                                         <a href="{{ $trainer->insta }}"><i class="fa fa-instagram text-primary"></i></a>
                                     </div>
@@ -406,112 +408,54 @@
     </section>
     <!--/ End service -->
 
-    <!-- Pricing Table -->
+    {{-- Pricing Table --}}
     <section class="pricing-table section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>We Provide You The Best Treatment In Resonable Price</h2>
-                        <img src="{{ 'frontend/1/img/section-img.png' }}" alt="#">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                <div class="col-md-12">
+                    <div id="package-slider" class="owl-carousel">
+
+                        @foreach ($packages as $package)
+                            <div class="post-slide">
+                                <!-- Single Table -->
+
+                                <div class="single-table">
+                                    <!-- Table Head -->
+                                    <div class="table-head">
+                                        <div class="icon">
+                                            <img src="{{ asset('storage/' . $package->image) }}" alt="">
+                                        </div>
+                                        <h4 class="title"> {{ $package->name }}</h4>
+                                        <div class="price">
+                                            <p class="amount">$399<span>/ {{ $package->valid }}</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- Table List -->
+                                    <ul class="table-list">
+                                        @foreach ($package->details as $detail)
+                                            <li>
+                                                <i class="icofont icofont-ui-check"></i>
+                                                {{ $detail }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="table-bottom">
+                                        <a class="btn" href="#">{{ $package->price }}</a>
+                                    </div>
+                                    <!-- Table Bottom -->
+                                </div>
+
+                                <!-- End Single Table-->
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
-            </div>
-            <div class="row">
-
-
-                <!-- Single Table -->
-                <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <div class="icon">
-                                <i class="icofont icofont-tooth"></i>
-                            </div>
-                            <h4 class="title">Teeth Whitening</h4>
-                            <div class="price">
-                                <p class="amount">$299<span>/ Per Visit</span></p>
-                            </div>
-                        </div>
-                        <!-- Table List -->
-                        <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Donec ultricies metus</li>
-                            <li class="cross"><i class="icofont icofont-ui-close"></i>Pellentesque eget nibh</li>
-                        </ul>
-                        <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
-                        </div>
-                        <!-- Table Bottom -->
-                    </div>
-                </div>
-                <!-- End Single Table-->
-
-                <!-- Single Table -->
-                <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <div class="icon">
-                                <i class="icofont-heart-beat"></i>
-                            </div>
-                            <h4 class="title">Heart Suggery</h4>
-                            <div class="price">
-                                <p class="amount">$399<span>/ Per Visit</span></p>
-                            </div>
-                        </div>
-                        <!-- Table List -->
-                        <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                            <li><i class="icofont icofont-ui-check"></i>Donec ultricies metus</li>
-                            <li><i class="icofont icofont-ui-check"></i>Pellentesque eget nibh</li>
-                        </ul>
-                        <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
-                        </div>
-                        <!-- Table Bottom -->
-                    </div>
-                </div>
-                <!-- End Single Table-->
-
-                <!-- Single Table -->
-                <div class="col-lg-4 col-md-12 col-12">
-                    <div class="single-table">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <div class="icon">
-                                <i class="icofont-heart-beat"></i>
-                            </div>
-                            <h4 class="title">Heart Suggery</h4>
-                            <div class="price">
-                                <p class="amount">$399<span>/ Per Visit</span></p>
-                            </div>
-                        </div>
-                        <!-- Table List -->
-                        <ul class="table-list">
-                            <li><i class="icofont icofont-ui-check"></i>Lorem ipsum dolor sit</li>
-                            <li><i class="icofont icofont-ui-check"></i>Cubitur sollicitudin fentum</li>
-                            <li><i class="icofont icofont-ui-check"></i>Nullam interdum enim</li>
-                            <li><i class="icofont icofont-ui-check"></i>Donec ultricies metus</li>
-                            <li><i class="icofont icofont-ui-check"></i>Pellentesque eget nibh</li>
-                        </ul>
-                        <div class="table-bottom">
-                            <a class="btn" href="#">Book Now</a>
-                        </div>
-                        <!-- Table Bottom -->
-                    </div>
-                </div>
-                <!-- End Single Table-->
-
             </div>
         </div>
     </section>
-    <!--/ End Pricing Table -->
+    {{-- / End Pricing Table --}}
+
 
     <!-- Start Blog Area -->
     <section class="blog section" id="blog">
@@ -624,78 +568,81 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
-                    <form class="form" action="#">
+
+
+                    <div>
+                        {{-- Begin Success Massege  --}}
+                        @if (session()->has('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
+                        {{-- End Success Massege  --}}
+
+                        {{-- Begin Error Massege  --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
+                        {{-- End Error Massege  --}}
+                    </div>
+
+                    <form class="form" method="post" action="/contactSave">
+                        @csrf
+
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input name="name" type="text" placeholder="Name">
+                                    <input type="text" name="sender_name" id="sender_name" placeholder="Name"
+                                        required="">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input name="email" type="email" placeholder="Email">
+                                    <input type="email" name="sender_email" id="sender_email" placeholder="Email"
+                                        required="">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input name="phone" type="text" placeholder="Phone">
+                                    <input type="text" name="sender_phone" id="sender_phone" placeholder="Phone"
+                                        required="">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-6">
                                 <div class="form-group">
-                                    <div class="nice-select form-control wide" tabindex="0"><span
-                                            class="current">Department</span>
-                                        <ul class="list">
-                                            <li data-value="1" class="option selected ">Department</li>
-                                            <li data-value="2" class="option">Cardiac Clinic</li>
-                                            <li data-value="3" class="option">Neurology</li>
-                                            <li data-value="4" class="option">Dentistry</li>
-                                            <li data-value="5" class="option">Gastroenterology</li>
-                                        </ul>
-                                    </div>
+                                    <input type="text" name="sender_subject" id="sender_subject"
+                                        placeholder="Subject" required="">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-12">
                                 <div class="form-group">
-                                    <div class="nice-select form-control wide" tabindex="0"><span
-                                            class="current">Doctor</span>
-                                        <ul class="list">
-                                            <li data-value="1" class="option selected ">Doctor</li>
-                                            <li data-value="2" class="option">Dr. Akther Hossain</li>
-                                            <li data-value="3" class="option">Dr. Dery Alex</li>
-                                            <li data-value="4" class="option">Dr. Jovis Karon</li>
-                                        </ul>
-                                    </div>
+                                    <textarea name="sender_message" id="sender_message" placeholder="Your Message" required=""></textarea>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Date" id="datepicker">
+                            <div class="col-12">
+                                <div class="form-group login-btn">
+                                    <button class="btn" type="submit">Send</button>
                                 </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <textarea name="message" placeholder="Write Your Message Here....."></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-5 col-md-4 col-12">
-                                <div class="form-group">
-                                    <div class="button">
-                                        <button type="submit" class="btn">Book An Appointment</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-8 col-12">
-                                <p>( We will be confirm by an Text Message )</p>
+
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-lg-6 col-md-12 ">
-                    <div class="appointment-image">
-                        <img src="{{ 'frontend/1/img/contact-img.png' }}" alt="#">
+                    <div id="myMap">
+                        <iframe src="{{ asset($setting['site_google_map']) }}" width="600" height="600"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

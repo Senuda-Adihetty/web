@@ -9,13 +9,17 @@ use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\permissionUserController;
 use App\Http\Controllers\admin\contactController;
 use App\Http\Controllers\admin\trainerController;
+use App\Http\Controllers\admin\packageController;
+use App\Http\Controllers\admin\memberController;
 use App\Http\Controllers\ProfileController;
+
 use Illuminate\Support\Facades\Route;
 use App\Models\slider;
 use App\Models\anousementModel;
 use App\Models\settings;
 use App\Models\blogs;
 use App\Models\trainer;
+use App\Models\Package;
 use App\Http\Middleware\TimeRestrictedAccess;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,9 +29,10 @@ Route::get('/', function () {
     $setting = Settings::all()->pluck('value', 'key')->toArray();
     $trainers = trainer::all();
     $sliders = slider::all();
+    $packages = Package::all();
     $anousements = anousementModel::all();
     $blogs = blogs::orderBy('created_at', 'desc')->paginate(3);
-    return view('frontend.Home', compact('sliders', 'anousements', 'setting', 'blogs', 'trainers'));
+    return view('frontend.Home', compact('sliders', 'anousements', 'setting', 'blogs', 'trainers', 'packages'));
 });
 
 
@@ -161,6 +166,22 @@ Route::controller(trainerController::class)->middleware(['auth', 'verified'])->g
     Route::post('/saveTrainer', 'storeTrainer')->name('blog.save');
     Route::post('/trainerUpdate/{id}', 'updateTrainer')->name('trainer.update');
     Route::get('/deleteTrainer/{id}', 'deleteTrainer')->name('trainers.delete');
+});
+
+Route::controller(packageController::class)->middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/packageIndex', 'index')->name('package.index');
+    Route::post('/savepackage', 'storepackage')->name('package.save');
+    Route::post('/packageUpdate/{id}', 'updatepackage')->name('package.update');
+    Route::get('/deletepackage/{id}', 'deletepackage')->name('package.delete');
+});
+
+Route::controller(memberController::class)->middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/memberIndex', 'index')->name('member.index');
+    Route::post('/savemember', 'storemember')->name('member.save');
+    Route::post('/memberUpdate/{id}', 'updatemember')->name('member.update');
+    Route::get('/deletemember/{id}', 'deletemember')->name('member.delete');
 });
 
 require __DIR__ . '/auth.php';
