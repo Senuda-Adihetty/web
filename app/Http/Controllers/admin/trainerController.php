@@ -12,7 +12,12 @@ class trainerController extends Controller
     public function index()
     {
         $trainers = trainer::all();
-        return view('admin_panel.GMS.trainers', compact('trainers'));
+
+        // Max trainer ID eka gannawa
+        $maxId = Trainer::max('Trainer_ID');
+        $nextId = $maxId ? $maxId + 1 : 1; // Trainer table ek empty nam 1 walin patan ganna
+
+        return view('admin_panel.GMS.trainers', compact('trainers', 'nextId'));
     }
 
     public function storeTrainer(Request $request)
@@ -114,12 +119,12 @@ class trainerController extends Controller
     }
 
     public function dashboard()
-{
-    $user = Auth::user();
+    {
+        $user = Auth::user();
 
-    // Trainer table eke email field eka user email ekata match karana ekai ganna
-    $trainer = Trainer::where('email', $user->email)->first();
+        // Trainer table eke email field eka user email ekata match karana ekai ganna
+        $trainer = Trainer::where('email', $user->email)->first();
 
-    return view('admin_panel.dash2', compact('trainer'));
-}
+        return view('admin_panel.dash2', compact('trainer'));
+    }
 }

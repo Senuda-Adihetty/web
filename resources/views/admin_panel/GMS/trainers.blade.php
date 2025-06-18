@@ -73,7 +73,8 @@
                                 <label for="Trainer_ID" class="form-label">
                                     Trainer ID
                                 </label>
-                                <input type="text" class="form-control" name="Trainer_ID" id="Trainer_ID">
+                                 <input type="text" name="Trainer_ID" value="{{ $nextId }}" class="form-control" id="Trainer_ID">
+                                {{--  <input type="text" class="form-control" name="Trainer_ID" >  --}}
                             </div>
 
                             {{--  Name Part  --}}

@@ -51,7 +51,7 @@
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <span class="material-icons-round"> edit_calendar </span>
-                        <p>Schedules</p>
+                        <p>Schedules kas</p>
                     </a>
                 </li>
 
