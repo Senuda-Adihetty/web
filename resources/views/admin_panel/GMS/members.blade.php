@@ -38,7 +38,7 @@
                         {{--  Button trigger modal  --}}
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
-                            Add New Package
+                            Add New Member
                         </button>
                     </div>
                 </div>
@@ -50,75 +50,79 @@
         {{-- --------------------------------------------------------------------------------------- --}}
 
 
-         {{--  begin Modal  --}}
+        {{--  begin Modal  --}}
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
 
                         <h5 class="modal-title" id="exampleModalLabel">
-                            Add New Slide
+                            Add New Member
                         </h5>
 
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
                     {{--  Form Start  --}}
-                    <form method="POST" action="/savepackage" enctype="multipart/form-data">
+                    <form method="POST" action="/saveMember" enctype="multipart/form-data">
                         @csrf
 
                         <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4">
 
-                            {{--  Package Name Part  --}}
-                            <div class="mb-3">
-                                <label for="name" class="form-label">
-                                    Package Name
-                                </label>
-                                <input type="text" class="form-control" name="name" id="name">
-                            </div>
-
-                            {{--  Description Part  --}}
-                            <div class="mb-3">
-                                <label for="details" class="form-label">
-                                    Details
-                                </label>
-                                <div id="details-container">
-                                    <div class="detail-group mb-2">
-                                        <input type="text" class="form-control mb-2" name="details[]" id="details"
-                                            placeholder="Enter detail">
+                                    {{--  Package Name Part  --}}
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">
+                                            Package Name
+                                        </label>
+                                        <input type="text" class="form-control" name="name" id="name">
                                     </div>
+
+                                    {{--  Description Part  --}}
+                                    <div class="mb-3">
+                                        <label for="details" class="form-label">
+                                            Details
+                                        </label>
+                                        <div id="details-container">
+                                            <div class="detail-group mb-2">
+                                                <input type="text" class="form-control mb-2" name="details[]"
+                                                    id="details" placeholder="Enter detail">
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                            onclick="addDetail()">+ Add
+                                            More</button>
+                                    </div>
+
+                                    {{--  Valid Period Part  --}}
+                                    <div class="mb-3">
+                                        <label for="valid" class="form-label">
+                                            Valid Period
+                                        </label>
+                                        <input type="text" class="form-control" name="valid" id="valid">
+                                    </div>
+
+                                    {{-- Amount Part  --}}
+                                    <div class="mb-3">
+                                        <label for="price" class="form-label">
+                                            Amount
+                                        </label>
+                                        <input type="text" class="form-control" name="price" id="price">
+                                    </div>
+
+
+                                    {{-- Upload Image --}}
+                                    <div class="col-md-6 mb-3">
+                                        <label for="image" class="form-label">
+                                            Upload Package Image
+                                        </label>
+                                        <input type="file" name="image" class="form-control"
+                                            onchange="previewImage(event)" id="image"> {{-- onchange event to preview image --}}
+                                    </div>
+
                                 </div>
-                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="addDetail()">+ Add
-                                    More</button>
                             </div>
-
-                            {{--  Valid Period Part  --}}
-                            <div class="mb-3">
-                                <label for="valid" class="form-label">
-                                    Valid Period
-                                </label>
-                                <input type="text" class="form-control" name="valid" id="valid">
-                            </div>
-
-                            {{-- Amount Part  --}}
-                            <div class="mb-3">
-                                <label for="price" class="form-label">
-                                    Amount
-                                </label>
-                                <input type="text" class="form-control" name="price" id="price">
-                            </div>
-
-
-                            {{-- Upload Image --}}
-                            <div class="col-md-6 mb-3">
-                                <label for="image" class="form-label">
-                                    Upload Package Image
-                                </label>
-                                <input type="file" name="image" class="form-control" onchange="previewImage(event)"
-                                    id="image"> {{-- onchange event to preview image --}}
-                            </div>
-
-
                         </div>
 
                         <div class="modal-footer">
@@ -138,4 +142,4 @@
             </div>
         </div>
         {{--  end Modal  --}}
-@endsection
+    @endsection

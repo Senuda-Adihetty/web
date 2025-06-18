@@ -10,7 +10,7 @@ class memberController extends Controller
 
     public function index()
     {
-        return view('admin_panel.GMS.payments');
+        return view('admin_panel.GMS.members');
     }
 
 

@@ -74,9 +74,11 @@
         @include('admin_panel.layouts.navbar')
 
         @if (auth()->user()->hasAnyRole(['super-admin', 'admin']))
-            @include('admin_panel.layouts.sidebar')
+            @include('admin_panel.layouts.mainSidebar')
+        @elseif (auth()->user()->hasRole('member'))
+            @include('admin_panel.layouts.memberSidebar')
         @else
-            @include('admin_panel.layouts.sidebar2')
+            @include('admin_panel.layouts.newUserSidebar')
         @endif
 
 
@@ -84,7 +86,7 @@
         {{--  begin::App Main  --}}
         <main class="app-main">
 
-             @yield('content')
+            @yield('content')
 
 
 

@@ -2,15 +2,15 @@
 
 @section('content')
 
-    <!--begin::App Main-->
+
+    {{--  begin::App Main  --}}
     <main class="app-main">
-        <!--begin::App Content Top Area-->
+        {{--  begin::App Content Top Area  --}}
         <div class="app-content-top-area">
-            <!--begin::Container-->
+            {{--  begin::Container  --}}
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-
 
                         {{-- Begin Success Massege  --}}
                         @if (session()->has('success'))
@@ -34,88 +34,101 @@
                             </div>
                         @endif
                         {{-- End Error Massege  --}}
+
                     </div>
-
-
                     <div class="col-md-6 text-end">
-
-                        <!-- Button trigger modal -->
+                        {{--  Button trigger modal  --}}
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
-                            Add New User
+                            Add New Bank Details
                         </button>
-
                     </div>
                 </div>
             </div>
-            <!--end::Container-->
+            {{--  end::Container  --}}
         </div>
-        <!--end::App Content Bottom Area-->
+        {{--  end::App Content Bottom Area  --}}
+
+        {{-- --------------------------------------------------------------------------------------- --}}
+
 
         {{--  begin Modal  --}}
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog card card-info card-outline mb-0">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
+
                         <h5 class="modal-title" id="exampleModalLabel">
-                            Add New User
+                            Add New Bank Details
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
                     </div>
-
-
-                    <form method="POST" action="/saveUser" enctype="multipart/form-data">
+                    {{--  Form Start  --}}
+                    <form method="POST" action="/savebankDetails" enctype="multipart/form-data">
                         @csrf
 
                         <div class="modal-body">
 
-                            {{--  Name Part  --}}
+
+                            {{--  Bank Name Part  --}}
                             <div class="mb-3">
-                                <label for="name" class="form-label">
-                                    User Name
+                                <label for="bank_name" class="form-label">
+                                    Bank Name*
                                 </label>
-                                <input type="text" class="form-control" name="name" id="name">
+                                <input type="text" class="form-control" name="bank_name" id="bank_name">
                             </div>
 
+                            {{--  Bank Name Part  --}}
                             <div class="mb-3">
-                                <label for="email" class="form-label">
-                                    User Email
+                                <label for="branch_name" class="form-label">
+                                    Bank Branch*
                                 </label>
-                                <input type="text" class="form-control" name="email" id="email">
+                                <input type="text" class="form-control" name="branch_name" id="branch_name">
                             </div>
 
+                            {{--  Bank Name Part  --}}
                             <div class="mb-3">
-                                <label for="password" class="form-label">
-                                    User Password
+                                <label for="account_name" class="form-label">
+                                    Account Holder Name*
                                 </label>
-                                <input type="text" class="form-control" name="password" id="password">
+                                <input type="text" class="form-control" name="account_name" id="account_name">
                             </div>
 
-                            {{--  Roles  --}}
+                            {{--  Banka Account Number  --}}
                             <div class="mb-3">
-                                <label for="user_roles" class="form-label">User Roles</label>
-                                <select class="form-control" name="roles[]">
-                                    <option value="">Select Role</option>
-                                    @foreach ($roles as $role)
-                                        <option value="{{ $role }}">{{ $role }}</option>
-                                    @endforeach
-                                </select>
+                                <label for="account_number" class="form-label">
+                                    Account Number*
+                                </label>
+                                <input type="text" class="form-control" name="account_number" id="account_number">
+                            </div>
 
+                            {{--  Special Note  --}}
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">
+                                    Special Note
+                                </label>
+                                <input type="text" class="form-control" name="notes" id="notes">
                             </div>
 
 
-                            <div class="modal-footer">
-                                <span>
-                                    For security reasons, you cannot edit the users you create here. Therefore, if such a
-                                    situation arises, delete the user and create it again as needed.
-                                </span>
-
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Add User</button>
-                            </div>
 
                         </div>
+
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Add Bank
+                            </button>
+
+                        </div>
+
                     </form>
+                    {{--  Form End  --}}
                 </div>
             </div>
         </div>
@@ -129,12 +142,12 @@
                 {{--  begin::Row  --}}
                 <div class="row">
                     <div class="col-sm-8">
-                        <h3 class="mb-0">User Custom Area</h3>
+                        <h3 class="mb-0">Bank Custom Area</h3>
                     </div>
                     <div class="col-sm-4">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Users</li>
+                            <li class="breadcrumb-item active" aria-current="page">Bank Details</li>
                         </ol>
                     </div>
                 </div>
@@ -157,145 +170,131 @@
                         </div>
                         {{--  end minimize and close tools  --}}
 
-                        <h3 class="card-title">All Users</h3>
+                        <h3 class="card-title">Available Bank Details</h3>
                     </div>
 
-                    {{--  begin::Card Body  --}}
                     <div class="card-body">
-                        <table class="table table-bordered table-striped table-hover" id="userPermission">
-                            {{--  begin table header  --}}
+
+                        <table class="table table-bordered table-striped table-hover" id="bank">
                             <thead>
                                 <tr>
 
-                                    <th style="width: 10px">Id</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Profile Image</th>
-                                    <th>Role</th>
+                                    <th style="width: 10px">#</th>
+                                    <th>Details</th>
                                     <th>Actons</th>
 
                                 </tr>
                             </thead>
 
                             <tbody>
-
-                                @foreach ($users as $user)
+                                @foreach ($banks as $bank)
                                     <tr class="align-middle">
 
-                                        <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $user->id }}
-                                        </td>
+                                        <td>{{ $bank->id }}</td>
 
                                         <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $user->name }}
+                                            <p>
+                                                <strong>Bank:</strong> {{ $bank->bank_name }}<br>
+                                                <strong>Branch:</strong> {{ $bank->branch_name }}<br>
+                                                <strong>ACC Name:</strong> {{ $bank->account_name }}<br>
+                                                <strong>ACC NO:</strong> {{ $bank->account_number }}<br>
+                                                <strong>Note:</strong> {{ $bank->notes }}<br>
+                                            </p>
                                         </td>
 
-                                        <td class="text-wrap" style="white-space: normal; max-width: 250px;">
-                                            {{ $user->email }}
-                                        </td>
 
-                                        <td>
-                                            <img width="100" src="{{ asset('storage/' . $user->image) }}"
-                                                alt="">
-                                        </td>
-                                        <td>
-                                            @foreach ($user->roles as $role)
-                                                {{ $role->name }}
-                                            @endforeach
-                                        </td>
                                         <td>
 
                                             {{--  Button trigger modal  --}}
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#userRoleModal{{ $user->id }}">
+                                                data-bs-target="#bankModal{{ $bank->id }}">
                                                 Edit
                                             </button>
 
                                             {{--  begin Modal for edit Button  --}}
-                                            <div class="modal fade" id="userRoleModal{{ $user->id }}" tabindex="-1"
+                                            <div class="modal fade" id="bankModal{{ $bank->id }}" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog card card-info card-outline mb-0">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">
-                                                                Edit Role
+                                                                Edit Bank Detail
                                                             </h5>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
 
 
-                                                        <form method="POST" action="/userUpdate/{{ $user->id }}"
+                                                        <form method="POST"
+                                                            action="/bankDetailsUpdate/{{ $bank->id }}"
                                                             enctype="multipart/form-data">
                                                             @csrf
-                                                            @method('PUT')
 
-                                                            <input type="hidden" name="role_id"
-                                                                value="{{ $user->id }}">
+                                                            <input type="hidden" name="id"
+                                                                value="{{ $bank->id }}">
 
                                                             <div class="modal-body">
 
+
+                                                                {{--  Bank Name Part  --}}
                                                                 <div class="mb-3">
-                                                                    <label for="name" class="form-label">
-                                                                        User Name
+                                                                    <label for="bank_name" class="form-label">
+                                                                        Bank Name
                                                                     </label>
                                                                     <input type="text" class="form-control"
-                                                                        name="name" id="name"
-                                                                        value="{{ $user->name }}">
+                                                                        name="bank_name" id="bank_name"
+                                                                        value="{{ $bank->bank_name }}">
                                                                 </div>
 
+                                                                {{--  Bank Name Part  --}}
                                                                 <div class="mb-3">
-                                                                    <label for="email" class="form-label">
-                                                                        User Email
+                                                                    <label for="branch_name" class="form-label">
+                                                                        Bank Branch
                                                                     </label>
                                                                     <input type="text" class="form-control"
-                                                                        name="email" id="email"
-                                                                        value="{{ $user->email }}">
+                                                                        name="branch_name" id="branch_name"
+                                                                        value="{{ $bank->branch_name }}">
                                                                 </div>
 
+                                                                {{--  Bank Name Part  --}}
                                                                 <div class="mb-3">
-                                                                    <label for="password" class="form-label">
-                                                                        User Password
+                                                                    <label for="account_name" class="form-label">
+                                                                        Account Holder Name
                                                                     </label>
                                                                     <input type="text" class="form-control"
-                                                                        name="password" id="password"
-                                                                        value="{{ $user->password }}">
-                                                                    {{--  Laravel uses bcrypt, which is a non-reversible hash —
-                                                                    it's designed so that you can’t see the original
-                                                                    password again. This is for security. Even admin
-                                                                    can't.  --}}
+                                                                        name="account_name" id="account_name"
+                                                                        value="{{ $bank->account_name }}">
                                                                 </div>
 
-                                                                {{--  Roles  --}}
+                                                                {{--  Banka Account Number  --}}
                                                                 <div class="mb-3">
-                                                                    <label for="user_roles" class="form-label">User
-                                                                        Roles</label>
-                                                                    {{--  <select class="form-control" name="roles[]">
-                                                                        <option value="">Select Role</option>
-                                                                        @foreach ($roles as $role)
-                                                                            <option value="{{ $role }}">
-                                                                                {{ $role }}</option>
-                                                                        @endforeach
-                                                                    </select>  --}}
-                                                                    <select name="role">
-                                                                        @foreach ($roles as $role)
-                                                                            <option value="{{ $role }}"
-                                                                                {{ $user->hasRole($role) ? 'selected' : '' }}>
-                                                                                {{ $role }}</option>
-                                                                        @endforeach
-                                                                    </select>
+                                                                    <label for="account_number" class="form-label">
+                                                                        Account Number
+                                                                    </label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="account_number" id="account_number"
+                                                                        value="{{ $bank->account_number }}">
+                                                                </div>
 
+                                                                {{--  Special Note  --}}
+                                                                <div class="mb-3">
+                                                                    <label for="notes" class="form-label">
+                                                                        Special Note
+                                                                    </label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="notes" id="notes"
+                                                                        value="{{ $bank->notes }}">
+                                                                </div>
 
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">
+                                                                        Update
+                                                                    </button>
                                                                 </div>
 
 
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">
-                                                                    Update
-                                                                </button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -303,16 +302,16 @@
                                             </div>
                                             {{--  end Modal for edit Button --}}
 
-                                            <a href="{{ route('user.delete', $user->id) }}"
+
+                                            <a href=""
                                                 onclick="return confirm('Are you sure you want to delete this slide?')"
                                                 class="btn btn-danger">
                                                 Delete
                                             </a>
-
-
                                         </td>
                                     </tr>
                                 @endforeach
+
                             </tbody>
                         </table>
                         {{--  end table  --}}
@@ -324,12 +323,16 @@
         </div>
         {{--  end::App Content Header  --}}
 
+
+
+
+
     @endsection
 
     @push('scripts')
         <script>
             $(document).ready(function() {
-                $('#userPermission').DataTable({
+                $('#bank').DataTable({
                     pageLength: 5,
                     lengthMenu: [
                         [5, 10, 25, 50, 100],

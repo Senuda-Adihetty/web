@@ -11,6 +11,8 @@ use App\Http\Controllers\admin\contactController;
 use App\Http\Controllers\admin\trainerController;
 use App\Http\Controllers\admin\packageController;
 use App\Http\Controllers\admin\memberController;
+use App\Http\Controllers\admin\bankDetailsController;
+use App\Http\Controllers\admin\newUserController;
 use App\Http\Controllers\ProfileController;
 
 use Illuminate\Support\Facades\Route;
@@ -20,6 +22,7 @@ use App\Models\settings;
 use App\Models\blogs;
 use App\Models\trainer;
 use App\Models\Package;
+use App\Models\bankDetails;
 use App\Http\Middleware\TimeRestrictedAccess;
 use Illuminate\Support\Facades\Auth;
 
@@ -86,8 +89,9 @@ Route::get('/gallery', function () {
 Route::get('/dashboard', function () {
     $user = Auth::user();
     $trainer = Trainer::where('email', $user->email)->first();
+    $banks = bankDetails::all();
 
-    return view('admin_panel.dashboard', compact('trainer'));
+    return view('admin_panel.dashboard', compact('trainer', 'banks'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
@@ -156,7 +160,7 @@ Route::controller(permissionUserController::class)->middleware(['auth', 'verifie
 
     Route::get('/userIndex', 'index')->name('user.index');;
     Route::post('/saveUser', 'storeuser')->name('user.store');
-    Route::post('/userUpdate', 'updateuser')->name('user.update');
+    Route::put('/userUpdate/{id}', 'updateuser')->name('user.update');
     Route::get('/deleteUser/{id}', 'deleteuser')->middleware(['role:super-admin'])->name('user.delete');
 });
 
@@ -182,6 +186,21 @@ Route::controller(memberController::class)->middleware(['auth', 'verified'])->gr
     Route::post('/savemember', 'storemember')->name('member.save');
     Route::post('/memberUpdate/{id}', 'updatemember')->name('member.update');
     Route::get('/deletemember/{id}', 'deletemember')->name('member.delete');
+});
+
+Route::controller(bankDetailsController::class)->middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/bankDetailsIndex', 'index')->name('bankDetails.index');
+    Route::post('/savebankDetails', 'storebankDetails')->name('bankDetails.save');
+    Route::post('/bankDetailsUpdate/{id}', 'updatebankDetails')->name('bankDetails.update');
+    Route::get('/deletebankDetails/{id}', 'deletebankDetails')->name('bankDetails.delete');
+});
+
+Route::controller(newUserController::class)->middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/newUserIndex', 'index')->name('newUser.index');
+    Route::put('/newuserUpdate/{id}', 'unlockUser')->name('newUser.update');
+
 });
 
 require __DIR__ . '/auth.php';

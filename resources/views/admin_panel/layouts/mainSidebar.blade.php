@@ -84,9 +84,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="/bankDetailsIndex" class="nav-link">
                         <span class="material-icons-round"> group </span>
-                        <p>Reports</p>
+                        <p>Bank Details</p>
                     </a>
                 </li>
 
@@ -94,6 +94,15 @@
 
                 <li class="nav-header">
                     Home Page Settings
+                </li>
+
+                <li class="nav-item">
+                    <a href="/newUserIndex" class="nav-link">
+                        <span class="material-icons-round"> draw </span>
+                        <p>
+                            New Users
+                        </p>
+                    </a>
                 </li>
 
                 <li class="nav-item">
